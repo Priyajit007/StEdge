@@ -116,8 +116,6 @@ The project is a Vivado **block design** (IP Integrator). The constraint file ta
 auto-generated wrapper `design_1_wrapper`, and every port name carries the usual `_0` / `_1`
 suffix IPI adds when exposing a hierarchical block's ports.
 
-### Option A — GUI
-
 1. `vivado &` → *Create Project* → RTL project, do **not** specify sources yet.
 2. Part: `xc7a35tcpg236-1` (or board preset *Basys 3*).
 3. Pick **one** tree:
@@ -146,38 +144,6 @@ suffix IPI adds when exposing a hierarchical block's ports.
    `design_1_wrapper`.
 8. Set `design_1_wrapper` as top. Run *Synthesis* → *Implementation* → *Generate Bitstream*.
 9. *Open Hardware Manager* → *Program Device*.
-
-### Option B — TCL (headless)
-
-There is no build script checked in, but a minimal re-creation of Option A looks like this.
-Save as `build.tcl` next to the repo root and invoke with
-`vivado -mode batch -source build.tcl -tclargs sobel` (or `prewitt`):
-
-```tcl
-set variant [lindex $argv 0]
-if {$variant eq "sobel"} {
-    set rtl   sobel_stochastic/RTL
-    set xdc   sobel_stochastic/constraint/const.xdc
-} else {
-    set rtl   prewitt_stochastic/RTL
-    set xdc   prewitt_stochastic/constraints/const.xdc
-}
-
-create_project stedge_$variant ./build_$variant -part xc7a35tcpg236-1 -force
-add_files [glob $rtl/*.v]
-add_files -fileset constrs_1 $xdc
-
-# ... create_bd_design design_1, instantiate modules, connect nets,
-#     make_wrapper / add_files design_1_wrapper.v -- see GUI steps 4-7 above.
-
-set_property top design_1_wrapper [current_fileset]
-launch_runs synth_1 -jobs 8 ; wait_on_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8 ; wait_on_run impl_1
-```
-
-The BD stitch-up is the tedious bit; the paper's supplementary material distributes it as a
-pre-archived `design_1.tcl`. If you build that into your copy of the repo, drop it beside the
-RTL and call `source design_1.tcl` between `add_files` and `launch_runs`.
 
 ---
 
