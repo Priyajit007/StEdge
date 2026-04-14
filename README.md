@@ -165,22 +165,6 @@ baseline numbers are in Table 4 / Table 5 of the PDF. Re-run your own numbers wi
 
 ---
 
-## Known gaps
-
-- **No testbench.** The design was brought up directly on hardware. The two `always` blocks in
-  `sobel_stoch.v` that are sensitive to both `clk_100mhz` and `clk` do not simulate cleanly
-  without a wrapper that serialises the edges — don't be surprised if a naïve sim produces
-  `X`s on `address`.
-- **No OV7670 init core** is included; see the note under *Hardware required*.
-- **Block-design TCL not distributed in-tree.** The `.bit` and the XDC are here, but the
-  IPI stitching is in the paper's supplementary archive. Either follow the GUI steps above or
-  port the supplement's `design_1.tcl`.
-- A handful of the VGA timing-parameter names in `vga_display.v` (`HF` vs `HB`) swap the
-  conventional front/back-porch labels. Values are correct for 640×480 @ 60 Hz (16/48/96); only
-  the comments are misleading. Left unchanged to match the synthesised bitstream.
-
----
-
 ## Citing
 
 ```bibtex
