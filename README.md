@@ -195,9 +195,3 @@ baseline numbers are in Table 4 / Table 5 of the PDF. Re-run your own numbers wi
   publisher = {MDPI}
 }
 ```
-
-## License
-
-No open-source license file has been declared. Treat the RTL as research code released
-alongside the paper — if you want to redistribute, modify or use it in a product, contact the
-corresponding author (`priyajitkandi2003@gmail.com`).
