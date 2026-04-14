@@ -1,23 +1,11 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 17.04.2025 21:30:42
-// Design Name: 
-// Module Name: address_mux
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+//==============================================================================
+// Module : address_mux
+//
+// Steers either the write address (capture side) or the read address (VGA
+// side) onto the single frame_buffer port, according to the wea strobe from
+// read_write_controller. Pure combinational 2:1 mux on 17-bit addresses.
+//==============================================================================
 
 
 module address_mux(

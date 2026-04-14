@@ -1,23 +1,12 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 17.04.2025 13:38:59
-// Design Name: 
-// Module Name: data_MUX
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+//==============================================================================
+// Module : data_MUX
+//
+// Blank-screen gate between sobel_stoch.pix_out and vga_display.data_in.
+// `select` is driven by read_write_controller: the FSM holds it low while
+// the frame buffer is being filled so the display shows black instead of
+// a torn / half-updated frame.
+//==============================================================================
 
 
 module data_MUX(

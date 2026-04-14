@@ -1,45 +1,37 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 19.02.2025 10:36:34
-// Design Name: 
-// Module Name: vga_display
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+//==============================================================================
+// Module : vga_display
+//
+// 640x480 @ 60 Hz VGA timing generator + read-side frame-buffer driver. Walks
+// horizontal / vertical counters off the 25 MHz pixel clock, emits hsync /
+// vsync and gates the 12-bit RGB output to the visible region.
+//
+// Per-row it also produces the BRAM read address:
+//     address = (v/2) * 320 + (h/2)
+// so the 320x240 buffer is upscaled 2x both ways into the 640x480 scan.
+//
+// Output rgb is { data_in[3:0], data_in[3:0], data_in[3:0] } -- greyscale
+// replicated across R/G/B nibbles so the Basys 3's 4-bit-per-channel VGA DAC
+// maps directly to luminance.
+//
+// Ports
+//   clk_100mhz   : system clock -- only clocks frame_done pulse logic
+//   p_clk        : 25 MHz pixel clock (from a MMCM/PLL in the block design)
+//   data_in[7:0] : greyscale/edge byte coming back from the detector path
+//   reset        : active-high clear
+//   hsync, vsync : VGA sync pulses
+//   rgb[11:0]    : 4:4:4 Basys 3 VGA DAC
+//   video_on     : high only inside the visible 640x480 region
+//   address[16:0]: read address into frame_buffer
+//   frame_done   : one-tick pulse at end-of-visible region (display side handoff)
+//   h_count_reg, v_count_reg : exposed for debug / chipscope taps
+//
+// NOTE: HF / HB parameter names swap the conventional front/back porch labels
+// below; the numeric values are correct for 640x480 @ 60 Hz (16 front, 48
+// back, 96 retrace). Left as-is because the bitstream in Bitfile/ matches.
+//==============================================================================
 
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 22.01.2025 14:55:53
-// Design Name: 
-// Module Name: VGAout
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module vga_display(
     input clk_100mhz,
@@ -70,7 +62,7 @@ module vga_display(
     reg [7:0] data;
     reg flag;
     wire [16:0] address1;
-   //Logic for horizontal counter
+   // ---- frame_done pulse on transition to the vertical blanking region ----
     always @(posedge clk_100mhz)
     begin
         if(reset)
@@ -123,7 +115,9 @@ module vga_display(
     // Video ON/OFF - only ON while pixel counts are within the display area
     assign video_on = (h_count_reg < HD) && (v_count_reg < VD); // 0-639 and 0-479 respectively
     
+    // Greyscale broadcast onto all three 4-bit DAC lanes.
     assign rgb = (video_on) ?{data_in[3:0],data_in[3:0],data_in[3:0]}:12'b0;
+    // 640x480 -> 320x240 map: divide both counters by 2 (pixel doubling).
     assign address = (v_count_reg/2) * 320 + (h_count_reg/2);
 //    assign address1 = v_count_reg * 640 + h_count_reg;
 //    assign address = (address1<76800)?address1:17'b0;

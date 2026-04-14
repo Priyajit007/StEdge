@@ -1,0 +1,30 @@
+# Published paper – kept locally, not tracked
+Hardware_StoBel.pdf
+*.pdf
+
+# Vivado project scratch
+*.jou
+*.log
+*.str
+*.wbt
+*.wdb
+.Xil/
+.hbs/
+vivado*.backup.*
+
+# Generated project trees (keep the BD sources, not the build artefacts)
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.gen/
+*.srcs/sources_1/bd/*/ip/
+*.srcs/sources_1/bd/*/hdl/
+*.srcs/sources_1/bd/*/synth/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
