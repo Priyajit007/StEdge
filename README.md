@@ -9,11 +9,7 @@ from an OV7670 camera straight to a VGA monitor.
 Measured against a deterministic baseline on the same board: **~84 % fewer LUTs, ~68 % less
 BRAM and ~17 % lower on-chip power** while holding visual quality flat. Full numbers, the
 algebraic reformulation and the bit-interleaved accumulator trick are in the companion paper
-(`Hardware_StoBel.pdf` is git-ignored; download it from the DOI below).
-
-> Ghosh, Mukherjee, Saha, Das, Raha, Naskar. *StEdge: A Low-Power Real-Time Hardware Accelerator
-> for Edge Detection Using Stochastic Computing.* **Hardware** (MDPI), 2026.
-> DOI: [10.3390/hardware1010000](https://doi.org/10.3390/hardware1010000)
+(`Hardware_StoBel.pdf` is git-ignored; keep a local copy if you want the derivations handy).
 
 ---
 
