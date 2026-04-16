@@ -13,6 +13,12 @@ algebraic reformulation and the bit-interleaved accumulator trick are in the com
 
 ---
 
+## Demo videos
+
+[Watch the demo videos on Google Drive](https://drive.google.com/drive/folders/1ev4mEHUn8ps4adxoBAxjehTk1-IdUQ-h)
+
+---
+
 ## Repository layout
 
 ```
