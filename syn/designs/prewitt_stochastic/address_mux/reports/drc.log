@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : address_mux
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:27:39 2026
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   address_mux                0.0000         2.3328        -2.3328  (VIOLATED)
+
+
+1

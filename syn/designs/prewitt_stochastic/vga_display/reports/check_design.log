@@ -1,0 +1,23 @@
+ 
+****************************************
+check_design summary:
+Version:     W-2024.09-SP4
+Date:        Sun Jun 28 06:29:37 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      4
+    Unconnected ports (LINT-28)                                     4
+
+Cells                                                               2
+    Cells do not drive (LINT-1)                                     2
+--------------------------------------------------------------------------------
+
+Warning: In design 'vga_display', cell 'C269' does not drive any nets. (LINT-1)
+Warning: In design 'vga_display', cell 'C274' does not drive any nets. (LINT-1)
+Warning: In design 'vga_display', port 'data_in[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'vga_display', port 'data_in[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'vga_display', port 'data_in[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'vga_display', port 'data_in[4]' is not connected to any nets. (LINT-28)
+1

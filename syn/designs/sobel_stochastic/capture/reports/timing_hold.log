@@ -1,0 +1,72 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : capture
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:24:06 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: flag_reg (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Endpoint: flag_reg (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_100mhz (rise edge)                          0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  flag_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)                0.0000     0.0000 r
+  flag_reg/QN (DFFASRHQNx1_ASAP7_75t_R)                64.5875    64.5875 r
+  U268/Y (A2O1A1Ixp33_ASAP7_75t_R)                     11.0210    75.6085 f
+  flag_reg/D (DFFASRHQNx1_ASAP7_75t_R)                  0.0000    75.6085 f
+  data arrival time                                               75.6085
+
+  clock clk_100mhz (rise edge)                          0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  clock uncertainty                                    20.0000    20.0000
+  flag_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)                0.0000    20.0000 r
+  library hold time                                    22.9131    42.9131
+  data required time                                              42.9131
+  --------------------------------------------------------------------------
+  data required time                                              42.9131
+  data arrival time                                              -75.6085
+  --------------------------------------------------------------------------
+  slack (MET)                                                     32.6954
+
+
+  Startpoint: halfclk_reg
+              (rising edge-triggered flip-flop clocked by pclk)
+  Endpoint: halfclk_reg
+            (rising edge-triggered flip-flop clocked by pclk)
+  Path Group: pclk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock pclk (rise edge)                                0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  halfclk_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)             0.0000     0.0000 r
+  halfclk_reg/QN (DFFASRHQNx1_ASAP7_75t_R)            129.6984   129.6984 f
+  halfclk_reg/D (DFFASRHQNx1_ASAP7_75t_R)               0.0000   129.6984 f
+  data arrival time                                              129.6984
+
+  clock pclk (rise edge)                                0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  clock uncertainty                                    20.0000    20.0000
+  halfclk_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)             0.0000    20.0000 r
+  library hold time                                    14.5285    34.5285
+  data required time                                              34.5285
+  --------------------------------------------------------------------------
+  data required time                                              34.5285
+  data arrival time                                              -129.6984
+  --------------------------------------------------------------------------
+  slack (MET)                                                     95.1699
+
+
+1

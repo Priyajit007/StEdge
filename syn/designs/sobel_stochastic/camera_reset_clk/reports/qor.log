@@ -1,0 +1,83 @@
+ 
+****************************************
+Report : qor
+Design : camera_reset_clk
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:24:07 2026
+****************************************
+
+
+  Timing Path Group 'vclk'
+  -----------------------------------
+  Levels of Logic:               1.00
+  Critical Path Length:          5.70
+  Critical Path Slack:         794.30
+  Critical Path Clk Period:   1000.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:                  1
+  Buf/Inv Cell Count:               1
+  Buf Cell Count:                   0
+  Inv Cell Count:                   1
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:         1
+  Sequential Cell Count:            0
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:        0.043740
+  Noncombinational Area:     0.000000
+  Buf/Inv Area:              0.043740
+  Total Buffer Area:             0.00
+  Total Inverter Area:           0.04
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:                 0.043740
+  Design Area:               0.043740
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:             3
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: ececomp2.ecn.purdue.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  0.07
+  Mapping Optimization:               48.33
+  -----------------------------------------
+  Overall Compile Time:              100.73
+  Overall Compile Wall Clock Time:   104.22
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : address_mux
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:24:06 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: rd_add[16] (input port)
+  Endpoint: add[16] (output port clocked by vclk)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  rd_add[16] (in)                        0.5533     0.5533 f
+  U37/Y (AO22x1_ASAP7_75t_R)            15.8873    16.4407 f
+  add[16] (out)                          0.0000    16.4407 f
+  data arrival time                                16.4407
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

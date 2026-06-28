@@ -1,0 +1,96 @@
+ 
+****************************************
+Report : qor
+Design : vga_display
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:27:39 2026
+****************************************
+
+
+  Timing Path Group 'clk_100mhz'
+  -----------------------------------
+  Levels of Logic:              13.00
+  Critical Path Length:        506.80
+  Critical Path Slack:         343.20
+  Critical Path Clk Period:   1000.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'p_clk'
+  -----------------------------------
+  Levels of Logic:               8.00
+  Critical Path Length:        390.49
+  Critical Path Slack:         545.67
+  Critical Path Clk Period:   1000.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:                147
+  Buf/Inv Cell Count:              34
+  Buf Cell Count:                   1
+  Inv Cell Count:                  33
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:       125
+  Sequential Cell Count:           22
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:        9.826920
+  Noncombinational Area:     8.164800
+  Buf/Inv Area:              1.501740
+  Total Buffer Area:             0.06
+  Total Inverter Area:           1.44
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:                17.991720
+  Design Area:              17.991720
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:           163
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: ececomp2.ecn.purdue.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.11
+  Logic Optimization:                  0.09
+  Mapping Optimization:                0.66
+  -----------------------------------------
+  Overall Compile Time:              101.10
+  Overall Compile Wall Clock Time:   103.41
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

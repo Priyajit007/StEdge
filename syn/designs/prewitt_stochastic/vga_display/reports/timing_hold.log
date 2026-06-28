@@ -1,0 +1,72 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : vga_display
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:31:21 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: flag_reg (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Endpoint: flag_reg (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk_100mhz (rise edge)           0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  flag_reg/CLK (DFFHQNx1_ASAP7_75t_R)    0.0000     0.0000 r
+  flag_reg/QN (DFFHQNx1_ASAP7_75t_R)    58.5698    58.5698 r
+  U131/Y (AOI31xp33_ASAP7_75t_R)        13.9987    72.5685 f
+  flag_reg/D (DFFHQNx1_ASAP7_75t_R)      0.0000    72.5685 f
+  data arrival time                                72.5685
+
+  clock clk_100mhz (rise edge)           0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  clock uncertainty                     20.0000    20.0000
+  flag_reg/CLK (DFFHQNx1_ASAP7_75t_R)    0.0000    20.0000 r
+  library hold time                     21.2883    41.2883
+  data required time                               41.2883
+  -----------------------------------------------------------
+  data required time                               41.2883
+  data arrival time                               -72.5685
+  -----------------------------------------------------------
+  slack (MET)                                      31.2802
+
+
+  Startpoint: h_count_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: h_count_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by p_clk)
+  Path Group: p_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  h_count_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  h_count_reg_reg[0]/QN (DFFASRHQNx1_ASAP7_75t_R)      73.2475    73.2475 f
+  h_count_reg_reg[0]/D (DFFASRHQNx1_ASAP7_75t_R)        0.0000    73.2475 f
+  data arrival time                                               73.2475
+
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  clock uncertainty                                    20.0000    20.0000
+  h_count_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000    20.0000 r
+  library hold time                                    21.1840    41.1840
+  data required time                                              41.1840
+  --------------------------------------------------------------------------
+  data required time                                              41.1840
+  data arrival time                                              -73.2475
+  --------------------------------------------------------------------------
+  slack (MET)                                                     32.0635
+
+
+1

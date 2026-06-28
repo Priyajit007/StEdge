@@ -1,0 +1,619 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -input_pins
+        -nets
+        -max_paths 5
+Design : vga_display
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:31:20 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: v_count_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: address[16]
+            (output port clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  v_count_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  v_count_reg_reg[1]/QN (DFFASRHQNx1_ASAP7_75t_R)      70.8256    70.8256 f
+  n46 (net)                                     4       0.0000    70.8256 f
+  U80/A (INVxp33_ASAP7_75t_R)                           0.0000    70.8256 f
+  U80/Y (INVxp33_ASAP7_75t_R)                          55.5656   126.3912 r
+  v_count_reg[1] (net)                          6       0.0000   126.3912 r
+  U168/B (NAND2xp33_ASAP7_75t_R)                        0.0000   126.3912 r
+  U168/Y (NAND2xp33_ASAP7_75t_R)                       40.3591   166.7503 f
+  DP_OP_21J1_122_3192/n20 (net)                 1       0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CI (FAx1_ASAP7_75t_R)         0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CON (FAx1_ASAP7_75t_R)       41.3706   208.1209 r
+  DP_OP_21J1_122_3192/n19 (net)                 1       0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/A (FAx1_ASAP7_75t_R)          0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/CON (FAx1_ASAP7_75t_R)       30.9840   239.1049 f
+  DP_OP_21J1_122_3192/n18 (net)                 1       0.0000   239.1049 f
+  DP_OP_21J1_122_3192/U18/CI (FAx1_ASAP7_75t_R)         0.0000   239.1049 f
+  DP_OP_21J1_122_3192/U18/CON (FAx1_ASAP7_75t_R)       38.5739   277.6787 r
+  DP_OP_21J1_122_3192/n17 (net)                 1       0.0000   277.6787 r
+  DP_OP_21J1_122_3192/U17/CI (FAx1_ASAP7_75t_R)         0.0000   277.6787 r
+  DP_OP_21J1_122_3192/U17/CON (FAx1_ASAP7_75t_R)       33.0080   310.6867 f
+  DP_OP_21J1_122_3192/n16 (net)                 1       0.0000   310.6867 f
+  DP_OP_21J1_122_3192/U13/CI (FAx1_ASAP7_75t_R)         0.0000   310.6867 f
+  DP_OP_21J1_122_3192/U13/CON (FAx1_ASAP7_75t_R)       37.2347   347.9214 r
+  DP_OP_21J1_122_3192/n15 (net)                 1       0.0000   347.9214 r
+  DP_OP_21J1_122_3192/U12/CI (FAx1_ASAP7_75t_R)         0.0000   347.9214 r
+  DP_OP_21J1_122_3192/U12/CON (FAx1_ASAP7_75t_R)       32.7061   380.6274 f
+  DP_OP_21J1_122_3192/n14 (net)                 1       0.0000   380.6274 f
+  DP_OP_21J1_122_3192/U8/CI (FAx1_ASAP7_75t_R)          0.0000   380.6274 f
+  DP_OP_21J1_122_3192/U8/CON (FAx1_ASAP7_75t_R)        37.2347   417.8622 r
+  DP_OP_21J1_122_3192/n13 (net)                 1       0.0000   417.8622 r
+  DP_OP_21J1_122_3192/U7/CI (FAx1_ASAP7_75t_R)          0.0000   417.8622 r
+  DP_OP_21J1_122_3192/U7/CON (FAx1_ASAP7_75t_R)        33.7966   451.6587 f
+  DP_OP_21J1_122_3192/n12 (net)                 1       0.0000   451.6587 f
+  DP_OP_21J1_122_3192/U3/CI (FAx1_ASAP7_75t_R)          0.0000   451.6587 f
+  DP_OP_21J1_122_3192/U3/CON (FAx1_ASAP7_75t_R)        30.7928   482.4516 r
+  DP_OP_21J1_122_3192/n11 (net)                 1       0.0000   482.4516 r
+  U181/B (HAxp5_ASAP7_75t_R)                            0.0000   482.4516 r
+  U181/CON (HAxp5_ASAP7_75t_R)                         15.3716   497.8232 f
+  U181/SN (HAxp5_ASAP7_75t_R)                           8.9719   506.7950 r
+  address[16] (net)                             1       0.0000   506.7950 r
+  address[16] (out)                                     0.0000   506.7950 r
+  data arrival time                                              506.7950
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  output external delay                               -100.0000  850.0000
+  data required time                                             850.0000
+  --------------------------------------------------------------------------
+  data required time                                             850.0000
+  data arrival time                                              -506.7950
+  --------------------------------------------------------------------------
+  slack (MET)                                                    343.2050
+
+
+  Startpoint: v_count_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: address[16]
+            (output port clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  v_count_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  v_count_reg_reg[1]/QN (DFFASRHQNx1_ASAP7_75t_R)      70.8256    70.8256 f
+  n46 (net)                                     4       0.0000    70.8256 f
+  U80/A (INVxp33_ASAP7_75t_R)                           0.0000    70.8256 f
+  U80/Y (INVxp33_ASAP7_75t_R)                          55.5656   126.3912 r
+  v_count_reg[1] (net)                          6       0.0000   126.3912 r
+  U168/B (NAND2xp33_ASAP7_75t_R)                        0.0000   126.3912 r
+  U168/Y (NAND2xp33_ASAP7_75t_R)                       40.3591   166.7503 f
+  DP_OP_21J1_122_3192/n20 (net)                 1       0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CI (FAx1_ASAP7_75t_R)         0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CON (FAx1_ASAP7_75t_R)       41.3706   208.1209 r
+  DP_OP_21J1_122_3192/n19 (net)                 1       0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/A (FAx1_ASAP7_75t_R)          0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/CON (FAx1_ASAP7_75t_R)       30.9840   239.1049 f
+  DP_OP_21J1_122_3192/n18 (net)                 1       0.0000   239.1049 f
+  DP_OP_21J1_122_3192/U18/CI (FAx1_ASAP7_75t_R)         0.0000   239.1049 f
+  DP_OP_21J1_122_3192/U18/CON (FAx1_ASAP7_75t_R)       38.5739   277.6787 r
+  DP_OP_21J1_122_3192/n17 (net)                 1       0.0000   277.6787 r
+  DP_OP_21J1_122_3192/U17/CI (FAx1_ASAP7_75t_R)         0.0000   277.6787 r
+  DP_OP_21J1_122_3192/U17/CON (FAx1_ASAP7_75t_R)       33.0080   310.6867 f
+  DP_OP_21J1_122_3192/n16 (net)                 1       0.0000   310.6867 f
+  DP_OP_21J1_122_3192/U13/CI (FAx1_ASAP7_75t_R)         0.0000   310.6867 f
+  DP_OP_21J1_122_3192/U13/CON (FAx1_ASAP7_75t_R)       37.2347   347.9214 r
+  DP_OP_21J1_122_3192/n15 (net)                 1       0.0000   347.9214 r
+  DP_OP_21J1_122_3192/U12/CI (FAx1_ASAP7_75t_R)         0.0000   347.9214 r
+  DP_OP_21J1_122_3192/U12/CON (FAx1_ASAP7_75t_R)       32.7061   380.6274 f
+  DP_OP_21J1_122_3192/n14 (net)                 1       0.0000   380.6274 f
+  DP_OP_21J1_122_3192/U8/CI (FAx1_ASAP7_75t_R)          0.0000   380.6274 f
+  DP_OP_21J1_122_3192/U8/CON (FAx1_ASAP7_75t_R)        37.2347   417.8622 r
+  DP_OP_21J1_122_3192/n13 (net)                 1       0.0000   417.8622 r
+  DP_OP_21J1_122_3192/U7/CI (FAx1_ASAP7_75t_R)          0.0000   417.8622 r
+  DP_OP_21J1_122_3192/U7/CON (FAx1_ASAP7_75t_R)        33.7966   451.6587 f
+  DP_OP_21J1_122_3192/n12 (net)                 1       0.0000   451.6587 f
+  DP_OP_21J1_122_3192/U3/CI (FAx1_ASAP7_75t_R)          0.0000   451.6587 f
+  DP_OP_21J1_122_3192/U3/CON (FAx1_ASAP7_75t_R)        30.7928   482.4516 r
+  DP_OP_21J1_122_3192/n11 (net)                 1       0.0000   482.4516 r
+  U181/B (HAxp5_ASAP7_75t_R)                            0.0000   482.4516 r
+  U181/CON (HAxp5_ASAP7_75t_R)                         15.3716   497.8232 f
+  U181/SN (HAxp5_ASAP7_75t_R)                           8.8340   506.6572 r
+  address[16] (net)                             1       0.0000   506.6572 r
+  address[16] (out)                                     0.0000   506.6572 r
+  data arrival time                                              506.6572
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  output external delay                               -100.0000  850.0000
+  data required time                                             850.0000
+  --------------------------------------------------------------------------
+  data required time                                             850.0000
+  data arrival time                                              -506.6572
+  --------------------------------------------------------------------------
+  slack (MET)                                                    343.3428
+
+
+  Startpoint: v_count_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: address[16]
+            (output port clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  v_count_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  v_count_reg_reg[1]/QN (DFFASRHQNx1_ASAP7_75t_R)      70.8256    70.8256 f
+  n46 (net)                                     4       0.0000    70.8256 f
+  U80/A (INVxp33_ASAP7_75t_R)                           0.0000    70.8256 f
+  U80/Y (INVxp33_ASAP7_75t_R)                          55.5656   126.3912 r
+  v_count_reg[1] (net)                          6       0.0000   126.3912 r
+  U168/B (NAND2xp33_ASAP7_75t_R)                        0.0000   126.3912 r
+  U168/Y (NAND2xp33_ASAP7_75t_R)                       40.3591   166.7503 f
+  DP_OP_21J1_122_3192/n20 (net)                 1       0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CI (FAx1_ASAP7_75t_R)         0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CON (FAx1_ASAP7_75t_R)       41.3706   208.1209 r
+  DP_OP_21J1_122_3192/n19 (net)                 1       0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/A (FAx1_ASAP7_75t_R)          0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/CON (FAx1_ASAP7_75t_R)       30.4492   238.5702 f
+  DP_OP_21J1_122_3192/n18 (net)                 1       0.0000   238.5702 f
+  DP_OP_21J1_122_3192/U18/CI (FAx1_ASAP7_75t_R)         0.0000   238.5702 f
+  DP_OP_21J1_122_3192/U18/CON (FAx1_ASAP7_75t_R)       38.5739   277.1440 r
+  DP_OP_21J1_122_3192/n17 (net)                 1       0.0000   277.1440 r
+  DP_OP_21J1_122_3192/U17/CI (FAx1_ASAP7_75t_R)         0.0000   277.1440 r
+  DP_OP_21J1_122_3192/U17/CON (FAx1_ASAP7_75t_R)       33.0080   310.1520 f
+  DP_OP_21J1_122_3192/n16 (net)                 1       0.0000   310.1520 f
+  DP_OP_21J1_122_3192/U13/CI (FAx1_ASAP7_75t_R)         0.0000   310.1520 f
+  DP_OP_21J1_122_3192/U13/CON (FAx1_ASAP7_75t_R)       37.2347   347.3867 r
+  DP_OP_21J1_122_3192/n15 (net)                 1       0.0000   347.3867 r
+  DP_OP_21J1_122_3192/U12/CI (FAx1_ASAP7_75t_R)         0.0000   347.3867 r
+  DP_OP_21J1_122_3192/U12/CON (FAx1_ASAP7_75t_R)       32.7061   380.0927 f
+  DP_OP_21J1_122_3192/n14 (net)                 1       0.0000   380.0927 f
+  DP_OP_21J1_122_3192/U8/CI (FAx1_ASAP7_75t_R)          0.0000   380.0927 f
+  DP_OP_21J1_122_3192/U8/CON (FAx1_ASAP7_75t_R)        37.2347   417.3274 r
+  DP_OP_21J1_122_3192/n13 (net)                 1       0.0000   417.3274 r
+  DP_OP_21J1_122_3192/U7/CI (FAx1_ASAP7_75t_R)          0.0000   417.3274 r
+  DP_OP_21J1_122_3192/U7/CON (FAx1_ASAP7_75t_R)        33.7966   451.1240 f
+  DP_OP_21J1_122_3192/n12 (net)                 1       0.0000   451.1240 f
+  DP_OP_21J1_122_3192/U3/CI (FAx1_ASAP7_75t_R)          0.0000   451.1240 f
+  DP_OP_21J1_122_3192/U3/CON (FAx1_ASAP7_75t_R)        30.7928   481.9168 r
+  DP_OP_21J1_122_3192/n11 (net)                 1       0.0000   481.9168 r
+  U181/B (HAxp5_ASAP7_75t_R)                            0.0000   481.9168 r
+  U181/CON (HAxp5_ASAP7_75t_R)                         15.3716   497.2884 f
+  U181/SN (HAxp5_ASAP7_75t_R)                           8.9719   506.2603 r
+  address[16] (net)                             1       0.0000   506.2603 r
+  address[16] (out)                                     0.0000   506.2603 r
+  data arrival time                                              506.2603
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  output external delay                               -100.0000  850.0000
+  data required time                                             850.0000
+  --------------------------------------------------------------------------
+  data required time                                             850.0000
+  data arrival time                                              -506.2603
+  --------------------------------------------------------------------------
+  slack (MET)                                                    343.7397
+
+
+  Startpoint: v_count_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: address[16]
+            (output port clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  v_count_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  v_count_reg_reg[1]/QN (DFFASRHQNx1_ASAP7_75t_R)      70.8256    70.8256 f
+  n46 (net)                                     4       0.0000    70.8256 f
+  U80/A (INVxp33_ASAP7_75t_R)                           0.0000    70.8256 f
+  U80/Y (INVxp33_ASAP7_75t_R)                          55.5656   126.3912 r
+  v_count_reg[1] (net)                          6       0.0000   126.3912 r
+  U168/B (NAND2xp33_ASAP7_75t_R)                        0.0000   126.3912 r
+  U168/Y (NAND2xp33_ASAP7_75t_R)                       40.3591   166.7503 f
+  DP_OP_21J1_122_3192/n20 (net)                 1       0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CI (FAx1_ASAP7_75t_R)         0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CON (FAx1_ASAP7_75t_R)       41.3706   208.1209 r
+  DP_OP_21J1_122_3192/n19 (net)                 1       0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/A (FAx1_ASAP7_75t_R)          0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/CON (FAx1_ASAP7_75t_R)       30.4492   238.5702 f
+  DP_OP_21J1_122_3192/n18 (net)                 1       0.0000   238.5702 f
+  DP_OP_21J1_122_3192/U18/CI (FAx1_ASAP7_75t_R)         0.0000   238.5702 f
+  DP_OP_21J1_122_3192/U18/CON (FAx1_ASAP7_75t_R)       38.5739   277.1440 r
+  DP_OP_21J1_122_3192/n17 (net)                 1       0.0000   277.1440 r
+  DP_OP_21J1_122_3192/U17/CI (FAx1_ASAP7_75t_R)         0.0000   277.1440 r
+  DP_OP_21J1_122_3192/U17/CON (FAx1_ASAP7_75t_R)       33.0080   310.1520 f
+  DP_OP_21J1_122_3192/n16 (net)                 1       0.0000   310.1520 f
+  DP_OP_21J1_122_3192/U13/CI (FAx1_ASAP7_75t_R)         0.0000   310.1520 f
+  DP_OP_21J1_122_3192/U13/CON (FAx1_ASAP7_75t_R)       37.2347   347.3867 r
+  DP_OP_21J1_122_3192/n15 (net)                 1       0.0000   347.3867 r
+  DP_OP_21J1_122_3192/U12/CI (FAx1_ASAP7_75t_R)         0.0000   347.3867 r
+  DP_OP_21J1_122_3192/U12/CON (FAx1_ASAP7_75t_R)       32.7061   380.0927 f
+  DP_OP_21J1_122_3192/n14 (net)                 1       0.0000   380.0927 f
+  DP_OP_21J1_122_3192/U8/CI (FAx1_ASAP7_75t_R)          0.0000   380.0927 f
+  DP_OP_21J1_122_3192/U8/CON (FAx1_ASAP7_75t_R)        37.2347   417.3274 r
+  DP_OP_21J1_122_3192/n13 (net)                 1       0.0000   417.3274 r
+  DP_OP_21J1_122_3192/U7/CI (FAx1_ASAP7_75t_R)          0.0000   417.3274 r
+  DP_OP_21J1_122_3192/U7/CON (FAx1_ASAP7_75t_R)        33.7966   451.1240 f
+  DP_OP_21J1_122_3192/n12 (net)                 1       0.0000   451.1240 f
+  DP_OP_21J1_122_3192/U3/CI (FAx1_ASAP7_75t_R)          0.0000   451.1240 f
+  DP_OP_21J1_122_3192/U3/CON (FAx1_ASAP7_75t_R)        30.7928   481.9168 r
+  DP_OP_21J1_122_3192/n11 (net)                 1       0.0000   481.9168 r
+  U181/B (HAxp5_ASAP7_75t_R)                            0.0000   481.9168 r
+  U181/CON (HAxp5_ASAP7_75t_R)                         15.3716   497.2884 f
+  U181/SN (HAxp5_ASAP7_75t_R)                           8.8340   506.1224 r
+  address[16] (net)                             1       0.0000   506.1224 r
+  address[16] (out)                                     0.0000   506.1224 r
+  data arrival time                                              506.1224
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  output external delay                               -100.0000  850.0000
+  data required time                                             850.0000
+  --------------------------------------------------------------------------
+  data required time                                             850.0000
+  data arrival time                                              -506.1224
+  --------------------------------------------------------------------------
+  slack (MET)                                                    343.8776
+
+
+  Startpoint: v_count_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: address[16]
+            (output port clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  v_count_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  v_count_reg_reg[1]/QN (DFFASRHQNx1_ASAP7_75t_R)      70.8256    70.8256 f
+  n46 (net)                                     4       0.0000    70.8256 f
+  U80/A (INVxp33_ASAP7_75t_R)                           0.0000    70.8256 f
+  U80/Y (INVxp33_ASAP7_75t_R)                          55.5656   126.3912 r
+  v_count_reg[1] (net)                          6       0.0000   126.3912 r
+  U168/B (NAND2xp33_ASAP7_75t_R)                        0.0000   126.3912 r
+  U168/Y (NAND2xp33_ASAP7_75t_R)                       40.3591   166.7503 f
+  DP_OP_21J1_122_3192/n20 (net)                 1       0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CI (FAx1_ASAP7_75t_R)         0.0000   166.7503 f
+  DP_OP_21J1_122_3192/U23/CON (FAx1_ASAP7_75t_R)       41.3706   208.1209 r
+  DP_OP_21J1_122_3192/n19 (net)                 1       0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/A (FAx1_ASAP7_75t_R)          0.0000   208.1209 r
+  DP_OP_21J1_122_3192/U22/CON (FAx1_ASAP7_75t_R)       30.9840   239.1049 f
+  DP_OP_21J1_122_3192/n18 (net)                 1       0.0000   239.1049 f
+  DP_OP_21J1_122_3192/U18/CI (FAx1_ASAP7_75t_R)         0.0000   239.1049 f
+  DP_OP_21J1_122_3192/U18/CON (FAx1_ASAP7_75t_R)       38.5739   277.6787 r
+  DP_OP_21J1_122_3192/n17 (net)                 1       0.0000   277.6787 r
+  DP_OP_21J1_122_3192/U17/CI (FAx1_ASAP7_75t_R)         0.0000   277.6787 r
+  DP_OP_21J1_122_3192/U17/CON (FAx1_ASAP7_75t_R)       33.0079   310.6867 f
+  DP_OP_21J1_122_3192/n16 (net)                 1       0.0000   310.6867 f
+  DP_OP_21J1_122_3192/U13/CI (FAx1_ASAP7_75t_R)         0.0000   310.6867 f
+  DP_OP_21J1_122_3192/U13/CON (FAx1_ASAP7_75t_R)       37.2347   347.9214 r
+  DP_OP_21J1_122_3192/n15 (net)                 1       0.0000   347.9214 r
+  DP_OP_21J1_122_3192/U12/CI (FAx1_ASAP7_75t_R)         0.0000   347.9214 r
+  DP_OP_21J1_122_3192/U12/CON (FAx1_ASAP7_75t_R)       31.3809   379.3023 f
+  DP_OP_21J1_122_3192/n14 (net)                 1       0.0000   379.3023 f
+  DP_OP_21J1_122_3192/U8/CI (FAx1_ASAP7_75t_R)          0.0000   379.3023 f
+  DP_OP_21J1_122_3192/U8/CON (FAx1_ASAP7_75t_R)        37.2347   416.5370 r
+  DP_OP_21J1_122_3192/n13 (net)                 1       0.0000   416.5370 r
+  DP_OP_21J1_122_3192/U7/CI (FAx1_ASAP7_75t_R)          0.0000   416.5370 r
+  DP_OP_21J1_122_3192/U7/CON (FAx1_ASAP7_75t_R)        33.7966   450.3336 f
+  DP_OP_21J1_122_3192/n12 (net)                 1       0.0000   450.3336 f
+  DP_OP_21J1_122_3192/U3/CI (FAx1_ASAP7_75t_R)          0.0000   450.3336 f
+  DP_OP_21J1_122_3192/U3/CON (FAx1_ASAP7_75t_R)        30.7928   481.1264 r
+  DP_OP_21J1_122_3192/n11 (net)                 1       0.0000   481.1264 r
+  U181/B (HAxp5_ASAP7_75t_R)                            0.0000   481.1264 r
+  U181/CON (HAxp5_ASAP7_75t_R)                         15.3716   496.4980 f
+  U181/SN (HAxp5_ASAP7_75t_R)                           8.9719   505.4699 r
+  address[16] (net)                             1       0.0000   505.4699 r
+  address[16] (out)                                     0.0000   505.4699 r
+  data arrival time                                              505.4699
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  output external delay                               -100.0000  850.0000
+  data required time                                             850.0000
+  --------------------------------------------------------------------------
+  data required time                                             850.0000
+  data arrival time                                              -505.4699
+  --------------------------------------------------------------------------
+  slack (MET)                                                    344.5301
+
+
+  Startpoint: h_count_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: v_count_reg_reg[9]
+            (rising edge-triggered flip-flop clocked by p_clk)
+  Path Group: p_clk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  h_count_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  h_count_reg_reg[0]/QN (DFFASRHQNx1_ASAP7_75t_R)      76.0693    76.0693 f
+  n59 (net)                                     5       0.0000    76.0693 f
+  U107/C (NOR3xp33_ASAP7_75t_R)                         0.0000    76.0693 f
+  U107/Y (NOR3xp33_ASAP7_75t_R)                        33.8793   109.9486 r
+  n85 (net)                                     3       0.0000   109.9486 r
+  U111/B (NAND2xp33_ASAP7_75t_R)                        0.0000   109.9486 r
+  U111/Y (NAND2xp33_ASAP7_75t_R)                       28.5753   138.5239 f
+  n84 (net)                                     3       0.0000   138.5239 f
+  U112/A (NOR2xp33_ASAP7_75t_R)                         0.0000   138.5239 f
+  U112/Y (NOR2xp33_ASAP7_75t_R)                        35.1831   173.7070 r
+  n87 (net)                                     4       0.0000   173.7070 r
+  U149/B (NAND3xp33_ASAP7_75t_R)                        0.0000   173.7070 r
+  U149/Y (NAND3xp33_ASAP7_75t_R)                       49.5400   223.2471 f
+  n101 (net)                                    9       0.0000   223.2471 f
+  U79/A (INVxp33_ASAP7_75t_R)                           0.0000   223.2471 f
+  U79/Y (INVxp33_ASAP7_75t_R)                          65.4672   288.7143 r
+  n94 (net)                                     7       0.0000   288.7143 r
+  U161/B (NAND2xp33_ASAP7_75t_R)                        0.0000   288.7143 r
+  U161/Y (NAND2xp33_ASAP7_75t_R)                       37.8369   326.5512 f
+  n92 (net)                                     3       0.0000   326.5512 f
+  U162/A (OR4x1_ASAP7_75t_R)                            0.0000   326.5512 f
+  U162/Y (OR4x1_ASAP7_75t_R)                           42.6777   369.2289 f
+  n105 (net)                                    2       0.0000   369.2289 f
+  U194/A3 (OAI32xp33_ASAP7_75t_R)                       0.0000   369.2289 f
+  U194/Y (OAI32xp33_ASAP7_75t_R)                       21.2646   390.4935 r
+  n31 (net)                                     1       0.0000   390.4935 r
+  v_count_reg_reg[9]/D (DFFASRHQNx1_ASAP7_75t_R)        0.0000   390.4935 r
+  data arrival time                                              390.4935
+
+  clock p_clk (rise edge)                             1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  v_count_reg_reg[9]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000   950.0000 r
+  library setup time                                  -13.8317   936.1683
+  data required time                                             936.1683
+  --------------------------------------------------------------------------
+  data required time                                             936.1683
+  data arrival time                                              -390.4935
+  --------------------------------------------------------------------------
+  slack (MET)                                                    545.6747
+
+
+  Startpoint: h_count_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: v_count_reg_reg[9]
+            (rising edge-triggered flip-flop clocked by p_clk)
+  Path Group: p_clk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  h_count_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  h_count_reg_reg[0]/QN (DFFASRHQNx1_ASAP7_75t_R)      76.0693    76.0693 f
+  n59 (net)                                     5       0.0000    76.0693 f
+  U107/C (NOR3xp33_ASAP7_75t_R)                         0.0000    76.0693 f
+  U107/Y (NOR3xp33_ASAP7_75t_R)                        33.8793   109.9486 r
+  n85 (net)                                     3       0.0000   109.9486 r
+  U111/B (NAND2xp33_ASAP7_75t_R)                        0.0000   109.9486 r
+  U111/Y (NAND2xp33_ASAP7_75t_R)                       28.5753   138.5239 f
+  n84 (net)                                     3       0.0000   138.5239 f
+  U112/A (NOR2xp33_ASAP7_75t_R)                         0.0000   138.5239 f
+  U112/Y (NOR2xp33_ASAP7_75t_R)                        35.1831   173.7070 r
+  n87 (net)                                     4       0.0000   173.7070 r
+  U149/B (NAND3xp33_ASAP7_75t_R)                        0.0000   173.7070 r
+  U149/Y (NAND3xp33_ASAP7_75t_R)                       49.5400   223.2471 f
+  n101 (net)                                    9       0.0000   223.2471 f
+  U79/A (INVxp33_ASAP7_75t_R)                           0.0000   223.2471 f
+  U79/Y (INVxp33_ASAP7_75t_R)                          65.4672   288.7143 r
+  n94 (net)                                     7       0.0000   288.7143 r
+  U161/B (NAND2xp33_ASAP7_75t_R)                        0.0000   288.7143 r
+  U161/Y (NAND2xp33_ASAP7_75t_R)                       37.8369   326.5512 f
+  n92 (net)                                     3       0.0000   326.5512 f
+  U162/A (OR4x1_ASAP7_75t_R)                            0.0000   326.5512 f
+  U162/Y (OR4x1_ASAP7_75t_R)                           42.6777   369.2290 f
+  n105 (net)                                    2       0.0000   369.2290 f
+  U194/A3 (OAI32xp33_ASAP7_75t_R)                       0.0000   369.2290 f
+  U194/Y (OAI32xp33_ASAP7_75t_R)                       20.6400   389.8689 r
+  n31 (net)                                     1       0.0000   389.8689 r
+  v_count_reg_reg[9]/D (DFFASRHQNx1_ASAP7_75t_R)        0.0000   389.8689 r
+  data arrival time                                              389.8689
+
+  clock p_clk (rise edge)                             1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  v_count_reg_reg[9]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000   950.0000 r
+  library setup time                                  -13.8317   936.1683
+  data required time                                             936.1683
+  --------------------------------------------------------------------------
+  data required time                                             936.1683
+  data arrival time                                              -389.8689
+  --------------------------------------------------------------------------
+  slack (MET)                                                    546.2993
+
+
+  Startpoint: h_count_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: v_count_reg_reg[9]
+            (rising edge-triggered flip-flop clocked by p_clk)
+  Path Group: p_clk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  h_count_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  h_count_reg_reg[0]/QN (DFFASRHQNx1_ASAP7_75t_R)      76.0693    76.0693 f
+  n59 (net)                                     5       0.0000    76.0693 f
+  U107/C (NOR3xp33_ASAP7_75t_R)                         0.0000    76.0693 f
+  U107/Y (NOR3xp33_ASAP7_75t_R)                        33.8793   109.9486 r
+  n85 (net)                                     3       0.0000   109.9486 r
+  U111/B (NAND2xp33_ASAP7_75t_R)                        0.0000   109.9486 r
+  U111/Y (NAND2xp33_ASAP7_75t_R)                       28.5753   138.5239 f
+  n84 (net)                                     3       0.0000   138.5239 f
+  U112/A (NOR2xp33_ASAP7_75t_R)                         0.0000   138.5239 f
+  U112/Y (NOR2xp33_ASAP7_75t_R)                        35.1831   173.7070 r
+  n87 (net)                                     4       0.0000   173.7070 r
+  U149/B (NAND3xp33_ASAP7_75t_R)                        0.0000   173.7070 r
+  U149/Y (NAND3xp33_ASAP7_75t_R)                       49.5400   223.2471 f
+  n101 (net)                                    9       0.0000   223.2471 f
+  U79/A (INVxp33_ASAP7_75t_R)                           0.0000   223.2471 f
+  U79/Y (INVxp33_ASAP7_75t_R)                          65.4672   288.7143 r
+  n94 (net)                                     7       0.0000   288.7143 r
+  U161/B (NAND2xp33_ASAP7_75t_R)                        0.0000   288.7143 r
+  U161/Y (NAND2xp33_ASAP7_75t_R)                       37.8369   326.5512 f
+  n92 (net)                                     3       0.0000   326.5512 f
+  U162/A (OR4x1_ASAP7_75t_R)                            0.0000   326.5512 f
+  U162/Y (OR4x1_ASAP7_75t_R)                           42.6777   369.2289 f
+  n105 (net)                                    2       0.0000   369.2289 f
+  U194/A3 (OAI32xp33_ASAP7_75t_R)                       0.0000   369.2289 f
+  U194/Y (OAI32xp33_ASAP7_75t_R)                       20.3478   389.5767 r
+  n31 (net)                                     1       0.0000   389.5767 r
+  v_count_reg_reg[9]/D (DFFASRHQNx1_ASAP7_75t_R)        0.0000   389.5767 r
+  data arrival time                                              389.5767
+
+  clock p_clk (rise edge)                             1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  v_count_reg_reg[9]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000   950.0000 r
+  library setup time                                  -13.8317   936.1683
+  data required time                                             936.1683
+  --------------------------------------------------------------------------
+  data required time                                             936.1683
+  data arrival time                                              -389.5767
+  --------------------------------------------------------------------------
+  slack (MET)                                                    546.5916
+
+
+  Startpoint: h_count_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: v_count_reg_reg[8]
+            (rising edge-triggered flip-flop clocked by p_clk)
+  Path Group: p_clk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  h_count_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  h_count_reg_reg[0]/QN (DFFASRHQNx1_ASAP7_75t_R)      76.0693    76.0693 f
+  n59 (net)                                     5       0.0000    76.0693 f
+  U107/C (NOR3xp33_ASAP7_75t_R)                         0.0000    76.0693 f
+  U107/Y (NOR3xp33_ASAP7_75t_R)                        33.8793   109.9486 r
+  n85 (net)                                     3       0.0000   109.9486 r
+  U111/B (NAND2xp33_ASAP7_75t_R)                        0.0000   109.9486 r
+  U111/Y (NAND2xp33_ASAP7_75t_R)                       28.5753   138.5239 f
+  n84 (net)                                     3       0.0000   138.5239 f
+  U112/A (NOR2xp33_ASAP7_75t_R)                         0.0000   138.5239 f
+  U112/Y (NOR2xp33_ASAP7_75t_R)                        35.1831   173.7070 r
+  n87 (net)                                     4       0.0000   173.7070 r
+  U149/B (NAND3xp33_ASAP7_75t_R)                        0.0000   173.7070 r
+  U149/Y (NAND3xp33_ASAP7_75t_R)                       49.5400   223.2471 f
+  n101 (net)                                    9       0.0000   223.2471 f
+  U79/A (INVxp33_ASAP7_75t_R)                           0.0000   223.2471 f
+  U79/Y (INVxp33_ASAP7_75t_R)                          65.4672   288.7143 r
+  n94 (net)                                     7       0.0000   288.7143 r
+  U161/B (NAND2xp33_ASAP7_75t_R)                        0.0000   288.7143 r
+  U161/Y (NAND2xp33_ASAP7_75t_R)                       37.8369   326.5512 f
+  n92 (net)                                     3       0.0000   326.5512 f
+  U162/A (OR4x1_ASAP7_75t_R)                            0.0000   326.5512 f
+  U162/Y (OR4x1_ASAP7_75t_R)                           42.6777   369.2289 f
+  n105 (net)                                    2       0.0000   369.2289 f
+  U82/A2 (AOI22xp33_ASAP7_75t_R)                        0.0000   369.2289 f
+  U82/Y (AOI22xp33_ASAP7_75t_R)                        18.6175   387.8465 r
+  n33 (net)                                     1       0.0000   387.8465 r
+  v_count_reg_reg[8]/D (DFFASRHQNx1_ASAP7_75t_R)        0.0000   387.8465 r
+  data arrival time                                              387.8465
+
+  clock p_clk (rise edge)                             1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  v_count_reg_reg[8]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000   950.0000 r
+  library setup time                                  -13.4579   936.5421
+  data required time                                             936.5421
+  --------------------------------------------------------------------------
+  data required time                                             936.5421
+  data arrival time                                              -387.8465
+  --------------------------------------------------------------------------
+  slack (MET)                                                    548.6957
+
+
+  Startpoint: h_count_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by p_clk)
+  Endpoint: v_count_reg_reg[9]
+            (rising edge-triggered flip-flop clocked by p_clk)
+  Path Group: p_clk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock p_clk (rise edge)                               0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  h_count_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000     0.0000 r
+  h_count_reg_reg[1]/QN (DFFASRHQNx1_ASAP7_75t_R)      72.2661    72.2661 f
+  n58 (net)                                     4       0.0000    72.2661 f
+  U107/B (NOR3xp33_ASAP7_75t_R)                         0.0000    72.2661 f
+  U107/Y (NOR3xp33_ASAP7_75t_R)                        33.2802   105.5463 r
+  n85 (net)                                     3       0.0000   105.5463 r
+  U111/B (NAND2xp33_ASAP7_75t_R)                        0.0000   105.5463 r
+  U111/Y (NAND2xp33_ASAP7_75t_R)                       28.5753   134.1217 f
+  n84 (net)                                     3       0.0000   134.1217 f
+  U112/A (NOR2xp33_ASAP7_75t_R)                         0.0000   134.1217 f
+  U112/Y (NOR2xp33_ASAP7_75t_R)                        35.1831   169.3048 r
+  n87 (net)                                     4       0.0000   169.3048 r
+  U149/B (NAND3xp33_ASAP7_75t_R)                        0.0000   169.3048 r
+  U149/Y (NAND3xp33_ASAP7_75t_R)                       49.5400   218.8448 f
+  n101 (net)                                    9       0.0000   218.8448 f
+  U79/A (INVxp33_ASAP7_75t_R)                           0.0000   218.8448 f
+  U79/Y (INVxp33_ASAP7_75t_R)                          65.4672   284.3120 r
+  n94 (net)                                     7       0.0000   284.3120 r
+  U161/B (NAND2xp33_ASAP7_75t_R)                        0.0000   284.3120 r
+  U161/Y (NAND2xp33_ASAP7_75t_R)                       37.8369   322.1490 f
+  n92 (net)                                     3       0.0000   322.1490 f
+  U162/A (OR4x1_ASAP7_75t_R)                            0.0000   322.1490 f
+  U162/Y (OR4x1_ASAP7_75t_R)                           42.6777   364.8267 f
+  n105 (net)                                    2       0.0000   364.8267 f
+  U194/A3 (OAI32xp33_ASAP7_75t_R)                       0.0000   364.8267 f
+  U194/Y (OAI32xp33_ASAP7_75t_R)                       21.2646   386.0913 r
+  n31 (net)                                     1       0.0000   386.0913 r
+  v_count_reg_reg[9]/D (DFFASRHQNx1_ASAP7_75t_R)        0.0000   386.0913 r
+  data arrival time                                              386.0913
+
+  clock p_clk (rise edge)                             1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  v_count_reg_reg[9]/CLK (DFFASRHQNx1_ASAP7_75t_R)      0.0000   950.0000 r
+  library setup time                                  -13.8317   936.1683
+  data required time                                             936.1683
+  --------------------------------------------------------------------------
+  data required time                                             936.1683
+  data arrival time                                              -386.0913
+  --------------------------------------------------------------------------
+  slack (MET)                                                    550.0770
+
+
+1

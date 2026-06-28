@@ -1,0 +1,22 @@
+Synthesizing 18 source files  (jobs=4)
+    sobel_stochastic/capture_starter          OK rc=0
+    sobel_stochastic/address_mux              OK rc=0
+    sobel_stochastic/capture                  OK rc=0
+    sobel_stochastic/camera_reset_clk         OK rc=0
+    sobel_stochastic/data_MUX                 OK rc=0
+    sobel_stochastic/read_write_controller    OK rc=0
+    sobel_stochastic/sobel_stoch              OK rc=0
+    sobel_stochastic/vga_display              OK rc=0
+    prewitt_stochastic/address_mux              OK rc=0
+    prewitt_stochastic/camera_reset_clk         OK rc=0
+    sobel_stochastic/frame_buffer             FAIL rc=-1
+    prewitt_stochastic/capture_starter          OK rc=0
+    prewitt_stochastic/capture                  OK rc=0
+    prewitt_stochastic/data_MUX                 OK rc=0
+    prewitt_stochastic/read_write_controller    OK rc=0
+    prewitt_stochastic/sobel_stoch              OK rc=0
+    prewitt_stochastic/vga_display              OK rc=0
+    prewitt_stochastic/frame_buffer             FAIL rc=-1
+
+=== 16/18 succeeded ===
+FAILED: sobel_stochastic/frame_buffer, prewitt_stochastic/frame_buffer

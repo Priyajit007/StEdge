@@ -1,0 +1,164 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -input_pins
+        -nets
+        -max_paths 5
+Design : data_MUX
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:25:51 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: select (input port clocked by vclk)
+  Endpoint: dout[4] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 f
+  select (in)                            7.6634   107.6634 f
+  select (net)                   8       0.0000   107.6634 f
+  U13/A (AND2x2_ASAP7_75t_R)             0.0000   107.6634 f
+  U13/Y (AND2x2_ASAP7_75t_R)            21.2350   128.8985 f
+  dout[4] (net)                  1       0.0000   128.8985 f
+  dout[4] (out)                          0.0000   128.8985 f
+  data arrival time                               128.8985
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -128.8985
+  -----------------------------------------------------------
+  slack (MET)                                     771.1016
+
+
+  Startpoint: select (input port clocked by vclk)
+  Endpoint: dout[3] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 f
+  select (in)                            7.6634   107.6634 f
+  select (net)                   8       0.0000   107.6634 f
+  U15/A (AND2x2_ASAP7_75t_R)             0.0000   107.6634 f
+  U15/Y (AND2x2_ASAP7_75t_R)            21.2350   128.8985 f
+  dout[3] (net)                  1       0.0000   128.8985 f
+  dout[3] (out)                          0.0000   128.8985 f
+  data arrival time                               128.8985
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -128.8985
+  -----------------------------------------------------------
+  slack (MET)                                     771.1016
+
+
+  Startpoint: select (input port clocked by vclk)
+  Endpoint: dout[2] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 f
+  select (in)                            7.6634   107.6634 f
+  select (net)                   8       0.0000   107.6634 f
+  U16/A (AND2x2_ASAP7_75t_R)             0.0000   107.6634 f
+  U16/Y (AND2x2_ASAP7_75t_R)            21.2350   128.8985 f
+  dout[2] (net)                  1       0.0000   128.8985 f
+  dout[2] (out)                          0.0000   128.8985 f
+  data arrival time                               128.8985
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -128.8985
+  -----------------------------------------------------------
+  slack (MET)                                     771.1016
+
+
+  Startpoint: select (input port clocked by vclk)
+  Endpoint: dout[1] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 f
+  select (in)                            7.6634   107.6634 f
+  select (net)                   8       0.0000   107.6634 f
+  U17/A (AND2x2_ASAP7_75t_R)             0.0000   107.6634 f
+  U17/Y (AND2x2_ASAP7_75t_R)            21.2350   128.8985 f
+  dout[1] (net)                  1       0.0000   128.8985 f
+  dout[1] (out)                          0.0000   128.8985 f
+  data arrival time                               128.8985
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -128.8985
+  -----------------------------------------------------------
+  slack (MET)                                     771.1016
+
+
+  Startpoint: select (input port clocked by vclk)
+  Endpoint: dout[0] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 f
+  select (in)                            7.6634   107.6634 f
+  select (net)                   8       0.0000   107.6634 f
+  U10/A (AND2x2_ASAP7_75t_R)             0.0000   107.6634 f
+  U10/Y (AND2x2_ASAP7_75t_R)            21.2350   128.8985 f
+  dout[0] (net)                  1       0.0000   128.8985 f
+  dout[0] (out)                          0.0000   128.8985 f
+  data arrival time                               128.8985
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -128.8985
+  -----------------------------------------------------------
+  slack (MET)                                     771.1016
+
+
+1

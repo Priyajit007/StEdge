@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : read_write_controller
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:25:53 2026
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   read_write_controller      0.0000         3.4992        -3.4992  (VIOLATED)
+
+
+1

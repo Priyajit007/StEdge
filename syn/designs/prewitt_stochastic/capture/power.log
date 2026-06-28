@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : capture
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:29:28 2026
+****************************************
+
+
+Library(s) Used:
+
+    asap7sc7p5t_OA_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db)
+    asap7sc7p5t_AO_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SEQ_RVT_TT_nldm_220123 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db)
+
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.7  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =  21.0966 uW   (81%)
+  Net Switching Power  =   5.0706 uW   (19%)
+                         ---------
+Total Dynamic Power    =  26.1672 uW  (100%)
+
+Cell Leakage Power     =  20.6449 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  3.7092e-03            0.0000            0.0000        3.7092e-03  (  14.16%)  i
+register       7.2118e-04        2.7258e-03          859.6221        3.4479e-03  (  13.17%)
+sequential     1.5894e-02        5.8229e-06        1.2370e+04        1.5913e-02  (  60.76%)
+combinational  7.7188e-04        2.3389e-03        7.4144e+03        3.1182e-03  (  11.91%)
+--------------------------------------------------------------------------------------------------
+Total          2.1097e-02 mW     5.0706e-03 mW     2.0644e+04 pW     2.6188e-02 mW
+1

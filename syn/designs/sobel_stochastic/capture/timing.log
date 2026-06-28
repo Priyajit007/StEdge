@@ -1,0 +1,250 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -input_pins
+        -nets
+        -max_paths 5
+Design : capture
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:24:06 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: frame_done_reg
+              (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Endpoint: frame_done (output port clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_100mhz (rise edge)                          0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  frame_done_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)          0.0000     0.0000 r
+  frame_done_reg/QN (DFFASRHQNx1_ASAP7_75t_R)          65.3066    65.3066 f
+  n53 (net)                                     2       0.0000    65.3066 f
+  U249/A (INVxp33_ASAP7_75t_R)                          0.0000    65.3066 f
+  U249/Y (INVxp33_ASAP7_75t_R)                         16.1931    81.4997 r
+  frame_done (net)                              2       0.0000    81.4997 r
+  frame_done (out)                                      0.0000    81.4997 r
+  data arrival time                                               81.4997
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  output external delay                               -100.0000  850.0000
+  data required time                                             850.0000
+  --------------------------------------------------------------------------
+  data required time                                             850.0000
+  data arrival time                                              -81.4997
+  --------------------------------------------------------------------------
+  slack (MET)                                                    768.5003
+
+
+  Startpoint: frame_done_reg
+              (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Endpoint: frame_done (output port clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_100mhz (rise edge)                          0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  frame_done_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)          0.0000     0.0000 r
+  frame_done_reg/QN (DFFASRHQNx1_ASAP7_75t_R)          64.2023    64.2023 r
+  n53 (net)                                     2       0.0000    64.2023 r
+  U249/A (INVxp33_ASAP7_75t_R)                          0.0000    64.2023 r
+  U249/Y (INVxp33_ASAP7_75t_R)                         13.7887    77.9910 f
+  frame_done (net)                              2       0.0000    77.9910 f
+  frame_done (out)                                      0.0000    77.9910 f
+  data arrival time                                               77.9910
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  output external delay                               -100.0000  850.0000
+  data required time                                             850.0000
+  --------------------------------------------------------------------------
+  data required time                                             850.0000
+  data arrival time                                              -77.9910
+  --------------------------------------------------------------------------
+  slack (MET)                                                    772.0090
+
+
+  Startpoint: frame_done_reg
+              (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Endpoint: flag_reg (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_100mhz (rise edge)                          0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  frame_done_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)          0.0000     0.0000 r
+  frame_done_reg/QN (DFFASRHQNx1_ASAP7_75t_R)          65.3066    65.3066 f
+  n53 (net)                                     2       0.0000    65.3066 f
+  U249/A (INVxp33_ASAP7_75t_R)                          0.0000    65.3066 f
+  U249/Y (INVxp33_ASAP7_75t_R)                         16.1931    81.4997 r
+  frame_done (net)                              2       0.0000    81.4997 r
+  U266/D (NOR4xp25_ASAP7_75t_R)                         0.0000    81.4997 r
+  U266/Y (NOR4xp25_ASAP7_75t_R)                        14.4938    95.9935 f
+  n185 (net)                                    1       0.0000    95.9935 f
+  U268/A1 (A2O1A1Ixp33_ASAP7_75t_R)                     0.0000    95.9935 f
+  U268/Y (A2O1A1Ixp33_ASAP7_75t_R)                     18.3393   114.3328 r
+  n100 (net)                                    1       0.0000   114.3328 r
+  flag_reg/D (DFFASRHQNx1_ASAP7_75t_R)                  0.0000   114.3328 r
+  data arrival time                                              114.3328
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  flag_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)                0.0000   950.0000 r
+  library setup time                                  -13.5402   936.4598
+  data required time                                             936.4598
+  --------------------------------------------------------------------------
+  data required time                                             936.4598
+  data arrival time                                              -114.3328
+  --------------------------------------------------------------------------
+  slack (MET)                                                    822.1270
+
+
+  Startpoint: flag_reg (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Endpoint: frame_done_reg
+            (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_100mhz (rise edge)                          0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  flag_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)                0.0000     0.0000 r
+  flag_reg/QN (DFFASRHQNx1_ASAP7_75t_R)                66.2070    66.2070 r
+  n54 (net)                                     2       0.0000    66.2070 r
+  U246/B (NAND3xp33_ASAP7_75t_R)                        0.0000    66.2070 r
+  U246/Y (NAND3xp33_ASAP7_75t_R)                       18.2831    84.4901 f
+  n183 (net)                                    2       0.0000    84.4901 f
+  U247/A (INVxp33_ASAP7_75t_R)                          0.0000    84.4901 f
+  U247/Y (INVxp33_ASAP7_75t_R)                         27.9711   112.4611 r
+  n101 (net)                                    1       0.0000   112.4611 r
+  frame_done_reg/D (DFFASRHQNx1_ASAP7_75t_R)            0.0000   112.4611 r
+  data arrival time                                              112.4611
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  frame_done_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)          0.0000   950.0000 r
+  library setup time                                  -13.5660   936.4340
+  data required time                                             936.4340
+  --------------------------------------------------------------------------
+  data required time                                             936.4340
+  data arrival time                                              -112.4611
+  --------------------------------------------------------------------------
+  slack (MET)                                                    823.9728
+
+
+  Startpoint: frame_done_reg
+              (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Endpoint: frame_done_reg
+            (rising edge-triggered flip-flop clocked by clk_100mhz)
+  Path Group: clk_100mhz
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_100mhz (rise edge)                          0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  frame_done_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)          0.0000     0.0000 r
+  frame_done_reg/QN (DFFASRHQNx1_ASAP7_75t_R)          64.2023    64.2023 r
+  n53 (net)                                     2       0.0000    64.2023 r
+  U246/C (NAND3xp33_ASAP7_75t_R)                        0.0000    64.2023 r
+  U246/Y (NAND3xp33_ASAP7_75t_R)                       17.4235    81.6257 f
+  n183 (net)                                    2       0.0000    81.6257 f
+  U247/A (INVxp33_ASAP7_75t_R)                          0.0000    81.6257 f
+  U247/Y (INVxp33_ASAP7_75t_R)                         27.9711   109.5968 r
+  n101 (net)                                    1       0.0000   109.5968 r
+  frame_done_reg/D (DFFASRHQNx1_ASAP7_75t_R)            0.0000   109.5968 r
+  data arrival time                                              109.5968
+
+  clock clk_100mhz (rise edge)                        1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  frame_done_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)          0.0000   950.0000 r
+  library setup time                                  -13.5660   936.4340
+  data required time                                             936.4340
+  --------------------------------------------------------------------------
+  data required time                                             936.4340
+  data arrival time                                              -109.5968
+  --------------------------------------------------------------------------
+  slack (MET)                                                    826.8372
+
+
+  Startpoint: halfclk_reg
+              (rising edge-triggered flip-flop clocked by pclk)
+  Endpoint: halfclk_reg
+            (rising edge-triggered flip-flop clocked by pclk)
+  Path Group: pclk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock pclk (rise edge)                                0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  halfclk_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)             0.0000     0.0000 r
+  halfclk_reg/QN (DFFASRHQNx1_ASAP7_75t_R)            157.3414   157.3414 r
+  halfclk (net)                                48       0.0000   157.3414 r
+  halfclk_reg/D (DFFASRHQNx1_ASAP7_75t_R)               0.0000   157.3414 r
+  data arrival time                                              157.3414
+
+  clock pclk (rise edge)                              1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  halfclk_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)             0.0000   950.0000 r
+  library setup time                                  -28.0810   921.9190
+  data required time                                             921.9190
+  --------------------------------------------------------------------------
+  data required time                                             921.9190
+  data arrival time                                              -157.3414
+  --------------------------------------------------------------------------
+  slack (MET)                                                    764.5776
+
+
+  Startpoint: halfclk_reg
+              (rising edge-triggered flip-flop clocked by pclk)
+  Endpoint: halfclk_reg
+            (rising edge-triggered flip-flop clocked by pclk)
+  Path Group: pclk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock pclk (rise edge)                                0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  halfclk_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)             0.0000     0.0000 r
+  halfclk_reg/QN (DFFASRHQNx1_ASAP7_75t_R)            149.6210   149.6210 f
+  halfclk (net)                                48       0.0000   149.6210 f
+  halfclk_reg/D (DFFASRHQNx1_ASAP7_75t_R)               0.0000   149.6210 f
+  data arrival time                                              149.6210
+
+  clock pclk (rise edge)                              1000.0000  1000.0000
+  clock network delay (ideal)                           0.0000   1000.0000
+  clock uncertainty                                   -50.0000   950.0000
+  halfclk_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)             0.0000   950.0000 r
+  library setup time                                  -15.4845   934.5155
+  data required time                                             934.5155
+  --------------------------------------------------------------------------
+  data required time                                             934.5155
+  data arrival time                                              -149.6210
+  --------------------------------------------------------------------------
+  slack (MET)                                                    784.8945
+
+
+1

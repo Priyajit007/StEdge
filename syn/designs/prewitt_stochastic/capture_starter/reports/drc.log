@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : capture_starter
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:29:27 2026
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   capture_starter            0.0000         0.3791        -0.3791  (VIOLATED)
+
+
+1

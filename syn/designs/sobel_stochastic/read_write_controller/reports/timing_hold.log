@@ -1,0 +1,45 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : read_write_controller
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:25:53 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: write_en1_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: write_en1_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  write_en1_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)           0.0000     0.0000 r
+  write_en1_reg/QN (DFFASRHQNx1_ASAP7_75t_R)           63.8967    63.8967 r
+  U47/Y (O2A1O1Ixp33_ASAP7_75t_R)                      12.8674    76.7641 f
+  write_en1_reg/D (DFFASRHQNx1_ASAP7_75t_R)             0.0000    76.7641 f
+  data arrival time                                               76.7641
+
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  clock uncertainty                                    20.0000    20.0000
+  write_en1_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)           0.0000    20.0000 r
+  library hold time                                    22.7196    42.7196
+  data required time                                              42.7196
+  --------------------------------------------------------------------------
+  data required time                                              42.7196
+  data arrival time                                              -76.7641
+  --------------------------------------------------------------------------
+  slack (MET)                                                     34.0445
+
+
+1

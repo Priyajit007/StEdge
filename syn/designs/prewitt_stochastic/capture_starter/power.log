@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : capture_starter
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:29:27 2026
+****************************************
+
+
+Library(s) Used:
+
+    asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db)
+    asap7sc7p5t_SEQ_RVT_TT_nldm_220123 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db)
+
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.7  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =   1.1834 uW   (98%)
+  Net Switching Power  =  20.2344 nW    (2%)
+                         ---------
+Total Dynamic Power    =   1.2037 uW  (100%)
+
+Cell Leakage Power     = 263.8954 pW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  1.0508e-03            0.0000            0.0000        1.0508e-03  (  87.28%)  i
+register       1.2381e-04        6.5432e-06          229.7986        1.3058e-04  (  10.85%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  8.8353e-06        1.3691e-05           34.0967        2.2561e-05  (   1.87%)
+--------------------------------------------------------------------------------------------------
+Total          1.1834e-03 mW     2.0234e-05 mW       263.8954 pW     1.2039e-03 mW
+1

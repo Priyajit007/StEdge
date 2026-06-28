@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : area
+Design : sobel_stoch
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:31:20 2026
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_AO_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_OA_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db)
+    asap7sc7p5t_SEQ_RVT_TT_nldm_220123 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db)
+
+Number of ports:                           38
+Number of nets:                          1045
+Number of cells:                          980
+Number of combinational cells:            858
+Number of sequential cells:               122
+Number of macros/black boxes:               0
+Number of buf/inv:                        202
+Number of references:                      47
+
+Combinational area:                 70.567200
+Buf/Inv area:                        9.025020
+Noncombinational area:              35.837639
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   106.404838
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+sobel_stoch                        106.4048    100.0   70.5672    35.8376  0.0000  sobel_stoch
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                  70.5672    35.8376  0.0000
+
+1

@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : sobel_stoch
+Version: W-2024.09-SP4
+Date   : Sun Jun 28 06:31:20 2026
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   sobel_stoch                0.0000       106.4048       -106.4048 (VIOLATED)
+
+
+1

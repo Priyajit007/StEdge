@@ -1,0 +1,19 @@
+Source file (module),Design,Clocks,Status,Total cell area (um2),Comb area (um2),Noncomb area (um2),Buf/Inv area (um2),# cells,# comb cells,# seq cells,Dyn power (uW),Leak power (uW),Total power (uW),Worst slack (ps),Slack met,Crit path (ps),Est Fmax (GHz),# warnings,# errors,Note
+address_mux,sobel_stochastic,comb,OK,2.3328,2.3328,0.0,0.1021,19.0,19.0,0.0,1.0698,0.002,1.0718,697.8784,Yes,202.1216,3.3099,39,0,combinational (no registers)
+data_MUX,sobel_stochastic,comb,OK,0.6998,0.6998,0.0,0.0,8.0,8.0,0.0,0.4112,0.0012,0.4124,771.1016,Yes,128.8985,4.3688,13,0,combinational (no registers)
+camera_reset_clk,sobel_stochastic,comb,OK,0.0437,0.0437,0.0,0.0437,1.0,1.0,0.0,0.0045,0.0,0.0046,794.2994,Yes,105.7005,4.8614,8,0,combinational (no registers)
+capture_starter,sobel_stochastic,vsync,OK,0.3791,0.0875,0.2916,0.0875,3.0,2.0,1.0,1.2037,0.0003,1.204,786.9304,Yes,63.0696,4.6933,4,0,
+capture,sobel_stochastic,"clk_100mhz,pclk",OK,30.4285,11.941,18.4874,2.6244,224.0,175.0,49.0,26.1672,0.0206,26.1878,768.5003,Yes,81.4997,4.3197,14,0,
+frame_buffer,sobel_stochastic,clk,TIMEOUT,,,,,,,,,,,,,,,0,0,
+read_write_controller,sobel_stochastic,clk,OK,3.4992,1.6038,1.8954,0.3062,30.0,25.0,5.0,7.5633,0.0025,7.5658,731.6534,Yes,118.3466,3.7265,11,0,
+vga_display,sobel_stochastic,"clk_100mhz,p_clk",OK,17.9917,9.8269,8.1648,1.5017,147.0,125.0,22.0,29.8111,0.0135,29.8246,343.205,Yes,506.795,1.5225,15,0,
+sobel_stoch,sobel_stochastic,"clk,clk_100mhz",OK,99.9896,67.6512,32.3384,8.3543,932.0,822.0,110.0,150.6725,0.079,150.7515,3.3035,Yes,937.3736,1.0033,27,0,
+address_mux,prewitt_stochastic,comb,OK,2.3328,2.3328,0.0,0.1021,19.0,19.0,0.0,1.0698,0.002,1.0718,697.8784,Yes,202.1216,3.3099,39,0,combinational (no registers)
+data_MUX,prewitt_stochastic,comb,OK,0.6998,0.6998,0.0,0.0,8.0,8.0,0.0,0.4112,0.0012,0.4124,771.1016,Yes,128.8985,4.3688,13,0,combinational (no registers)
+camera_reset_clk,prewitt_stochastic,comb,OK,0.0437,0.0437,0.0,0.0437,1.0,1.0,0.0,0.0045,0.0,0.0046,794.2994,Yes,105.7005,4.8614,8,0,combinational (no registers)
+capture_starter,prewitt_stochastic,vsync,OK,0.3791,0.0875,0.2916,0.0875,3.0,2.0,1.0,1.2037,0.0003,1.204,786.9304,Yes,63.0696,4.6933,4,0,
+capture,prewitt_stochastic,"clk_100mhz,pclk",OK,30.4285,11.941,18.4874,2.6244,224.0,175.0,49.0,26.1672,0.0206,26.1878,768.5003,Yes,81.4997,4.3197,14,0,
+frame_buffer,prewitt_stochastic,clk,TIMEOUT,,,,,,,,,,,,,,,0,0,
+read_write_controller,prewitt_stochastic,clk,OK,3.4992,1.6038,1.8954,0.3062,30.0,25.0,5.0,7.5633,0.0025,7.5658,731.6534,Yes,118.3466,3.7265,11,0,
+vga_display,prewitt_stochastic,"clk_100mhz,p_clk",OK,17.9917,9.8269,8.1648,1.5017,147.0,125.0,22.0,29.8111,0.0135,29.8246,343.205,Yes,506.795,1.5225,15,0,
+sobel_stoch,prewitt_stochastic,"clk,clk_100mhz",OK,106.4048,70.5672,35.8376,9.025,980.0,858.0,122.0,165.7759,0.0842,165.8601,0.4294,Yes,955.9796,1.0004,27,0,

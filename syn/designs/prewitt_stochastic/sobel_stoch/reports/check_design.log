@@ -1,0 +1,26 @@
+ 
+****************************************
+check_design summary:
+Version:     W-2024.09-SP4
+Date:        Sun Jun 28 06:29:32 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      1
+    Unconnected ports (LINT-28)                                     1
+
+Cells                                                               8
+    Cells do not drive (LINT-1)                                     8
+--------------------------------------------------------------------------------
+
+Warning: In design 'sobel_stoch', cell 'C1425' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_stoch', cell 'C1429' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_stoch', cell 'C1433' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_stoch', cell 'B_7' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_stoch', cell 'C1469' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_stoch', cell 'C1472' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_stoch', cell 'C1482' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_stoch', cell 'C1485' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_stoch', port 'frame_done' is not connected to any nets. (LINT-28)
+1
