@@ -1,0 +1,17 @@
+ 
+****************************************
+check_design summary:
+Version:     W-2024.09-SP4
+Date:        Sun Jul 12 13:37:03 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Unconnected ports (LINT-28)                                     1
+    Feedthrough (LINT-29)                                           1
+--------------------------------------------------------------------------------
+
+Warning: In design 'camera_reset_clk', port 'reset' is not connected to any nets. (LINT-28)
+Warning: In design 'camera_reset_clk', input port 'clk' is connected directly to output port 'xclk'. (LINT-29)
+1

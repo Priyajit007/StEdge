@@ -1,0 +1,17 @@
+ 
+****************************************
+check_design summary:
+Version:     W-2024.09-SP4
+Date:        Sun Jul 12 13:38:53 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               3
+    Cells do not drive (LINT-1)                                     3
+--------------------------------------------------------------------------------
+
+Warning: In design 'capture', cell 'C546' does not drive any nets. (LINT-1)
+Warning: In design 'capture', cell 'C550' does not drive any nets. (LINT-1)
+Warning: In design 'capture', cell 'C559' does not drive any nets. (LINT-1)
+1

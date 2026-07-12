@@ -1,0 +1,27 @@
+ 
+****************************************
+check_design summary:
+Version:     W-2024.09-SP4
+Date:        Sun Jul 12 13:40:45 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      1
+    Unconnected ports (LINT-28)                                     1
+
+Cells                                                               9
+    Cells do not drive (LINT-1)                                     9
+--------------------------------------------------------------------------------
+
+Warning: In design 'prewitt', cell 'C1070' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', cell 'C1074' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', cell 'C1078' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', cell 'C1086' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', cell 'C1089' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', cell 'C1098' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', cell 'C1101' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', cell 'C1113' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', cell 'C1116' does not drive any nets. (LINT-1)
+Warning: In design 'prewitt', port 'frame_done' is not connected to any nets. (LINT-28)
+1

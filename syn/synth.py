@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Automated ASAP7 7 nm Design Compiler synthesis for the StEdge stochastic
-edge-detection RTL (sobel_stochastic + prewitt_stochastic).
+"""Automated ASAP7 7 nm Design Compiler synthesis for the StEdge edge-detection
+RTL. Four designs are synthesised: the two stochastic systems (sobel_stochastic,
+prewitt_stochastic) and the two deterministic "traditional full system" builds
+(sobel_traditional, prewitt_traditional). The traditional builds reuse the eight
+peripheral modules verbatim from the stochastic RTL and swap the stochastic
+compute core for the deterministic engine in traditional_src_codes/.
 
 The StEdge sources are a flat set of Verilog leaf modules that are wired
 together inside a Vivado block design (`design_1_wrapper.bit`), so there is no
@@ -52,8 +56,28 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)                       # StEdge/
 DESIGNS_DIR = os.path.join(HERE, "designs")
 
-# The two StEdge design source trees (each has an RTL/ folder of .v files).
-DESIGNS = ["sobel_stochastic", "prewitt_stochastic"]
+# The StEdge designs synthesised here.
+#   * The two *stochastic* designs each have their own RTL/ folder of .v files.
+#   * The two *traditional* ("full system") designs have NO separate RTL/ tree:
+#     they reuse the eight peripheral modules verbatim from the matching
+#     stochastic design and swap the stochastic compute core (sobel_stoch.v) for
+#     the deterministic edge engine in traditional_src_codes/ (sobel.v/prewitt.v).
+DESIGNS = ["sobel_stochastic", "prewitt_stochastic",
+           "sobel_traditional", "prewitt_traditional"]
+
+# Traditional-design source map.  periph_from = the stochastic design whose 8
+# peripheral .v files are reused (they are byte-identical between the two
+# stochastic trees); compute = (source file in traditional_src_codes/, top
+# module name to give the local copy).  prewitt.v declares `module sobel` in the
+# source, so its local copy is renamed to `prewitt` for an unambiguous top.
+TRAD_SRC_DIR = os.path.join(ROOT, "traditional_src_codes")
+STOCH_COMPUTE = "sobel_stoch.v"          # excluded from the reused peripheral set
+TRAD_DESIGNS = {
+    "sobel_traditional":   {"periph_from": "sobel_stochastic",
+                            "compute": ("sobel.v", "sobel")},
+    "prewitt_traditional": {"periph_from": "prewitt_stochastic",
+                            "compute": ("prewitt.v", "prewitt")},
+}
 
 DC_SHELL = "/package/eda/synopsys/syn/W-2024.09-SP4/bin/dc_shell"
 SYNOPSYS = "/package/eda/synopsys/syn/W-2024.09-SP4"
@@ -142,25 +166,42 @@ def analyze_rtl(path):
     }
 
 
-def shim_rtl(text, filename):
+def shim_rtl(text, filename, top_override=None):
     """Apply minimal, semantics-preserving fixes so the strict DC HDL Compiler
     accepts RTL that Vivado synthesises leniently. Returns (patched, notes).
     Applied to the LOCAL synthesis copy only -- the original repo RTL is left
     untouched. Every inserted/changed line is marked `// [synth shim]`.
 
+      0. Top-module rename: the traditional Prewitt compute core (prewitt.v)
+         declares `module sobel` in the source; when a `top_override` is given
+         that differs from the declared name, the local copy's module is renamed
+         so the working-folder stem, the DC top and the netlist agree.
       1. Implicit continuous-assign nets: a name used in an expression but only
          created by `assign name = ...` is rejected by DC (VER-956) when its
          first textual use precedes the assign (e.g. sobel_stoch's `shift_en`).
          Verilog implicit nets are always 1-bit scalars, so an explicit
          `wire name;` is exact.
-      2. sobel_stoch BRAM-fetch sequencer: `always @(posedge clk_100mhz or
-         posedge clk or posedge reset)` then tests `clk` as a level and
-         `counter` as data -- an illegal multi-clock flop for ASIC synthesis
-         (ELAB-300/303; the RTL comment itself notes it "does NOT simulate
-         cleanly"). Drop the extra `or posedge clk` edge so it is a normal
-         clk_100mhz flop with async reset that samples `clk` as a level.
+      2. BRAM-fetch sequencer (all three compute cores -- sobel_stoch/sobel/
+         prewitt): `always @(posedge clk_100mhz or posedge clk or posedge reset)`
+         then tests `clk` as a level and `counter` as data -- an illegal
+         multi-clock flop for ASIC synthesis (ELAB-300/303; the RTL comment
+         itself notes it "does NOT simulate cleanly"). Drop the extra `or posedge
+         clk` edge so it is a normal clk_100mhz flop with async reset that
+         samples `clk` as a level.
     """
     notes = []
+    # (0) rename the top module to match the working-folder stem when requested
+    if top_override:
+        mn = re.search(r"\bmodule\s+(\w+)", strip_comments(text))
+        declared = mn.group(1) if mn else None
+        if declared and declared != top_override:
+            m = re.search(r"\bmodule\s+" + re.escape(declared) + r"\s*\(", text)
+            if m:
+                repl = ("// [synth shim] renamed top module '" + declared
+                        + "' -> '" + top_override + "'\nmodule " + top_override
+                        + "(")
+                text = text[:m.start()] + repl + text[m.end():]
+                notes.append(f"renamed top module {declared} -> {top_override}")
     # (1) declare implicit continuous-assign nets
     assigned = re.findall(r"\bassign\s+(\w+)\s*=", text)
     decl_kw = re.compile(r"\b(wire|reg|logic|input|output|inout|tri|wand|wor)\b")
@@ -189,16 +230,39 @@ def shim_rtl(text, filename):
             lines.insert(end + 1, decls)
             text = "\n".join(lines)
             notes.append("declared implicit nets: " + ", ".join(need))
-    # (2) targeted multi-clock fix for sobel_stoch's fetch sequencer
-    if os.path.basename(filename) == "sobel_stoch.v":
-        bad = "always @(posedge clk_100mhz or posedge clk or posedge reset)"
-        good = ("always @(posedge clk_100mhz or posedge reset)  "
-                "// [synth shim] dropped illegal 2nd clock edge 'or posedge clk' "
-                "(ASIC: clk sampled as a level)")
-        if bad in text:
-            text = text.replace(bad, good)
-            notes.append("dropped illegal 2nd clock edge in fetch sequencer")
+    # (2) multi-clock fetch sequencer -- fires on any of the three compute cores
+    bad = "always @(posedge clk_100mhz or posedge clk or posedge reset)"
+    good = ("always @(posedge clk_100mhz or posedge reset)  "
+            "// [synth shim] dropped illegal 2nd clock edge 'or posedge clk' "
+            "(ASIC: clk sampled as a level)")
+    if bad in text:
+        text = text.replace(bad, good)
+        notes.append("dropped illegal 2nd clock edge in fetch sequencer")
     return text, notes
+
+
+def iter_sources(design):
+    """Yield (stem, filename, src_path, top_override) for one design's sources.
+
+    Stochastic designs read every .v under <design>/RTL/.  Traditional designs
+    reuse the eight peripheral .v of their `periph_from` stochastic design
+    (all but sobel_stoch.v) and append the deterministic compute core from
+    traditional_src_codes/ with an explicit top-module name."""
+    if design in TRAD_DESIGNS:
+        spec = TRAD_DESIGNS[design]
+        rtl_dir = os.path.join(ROOT, spec["periph_from"], "RTL")
+        if os.path.isdir(rtl_dir):
+            for fn in sorted(os.listdir(rtl_dir)):
+                if fn.endswith(".v") and fn != STOCH_COMPUTE:
+                    yield os.path.splitext(fn)[0], fn, os.path.join(rtl_dir, fn), None
+        cfn, ctop = spec["compute"]
+        yield os.path.splitext(cfn)[0], cfn, os.path.join(TRAD_SRC_DIR, cfn), ctop
+    else:
+        rtl_dir = os.path.join(ROOT, design, "RTL")
+        if os.path.isdir(rtl_dir):
+            for fn in sorted(os.listdir(rtl_dir)):
+                if fn.endswith(".v"):
+                    yield os.path.splitext(fn)[0], fn, os.path.join(rtl_dir, fn), None
 
 
 def build_units(only_designs=None, only_modules=None):
@@ -206,23 +270,19 @@ def build_units(only_designs=None, only_modules=None):
     for design in DESIGNS:
         if only_designs and design not in only_designs:
             continue
-        rtl_dir = os.path.join(ROOT, design, "RTL")
-        if not os.path.isdir(rtl_dir):
-            continue
-        for fn in sorted(os.listdir(rtl_dir)):
-            if not fn.endswith(".v"):
-                continue
-            stem = os.path.splitext(fn)[0]
+        for stem, fn, src, top_override in iter_sources(design):
             if only_modules and stem not in only_modules:
                 continue
-            src = os.path.join(rtl_dir, fn)
             info = analyze_rtl(src)
+            if top_override:
+                info["module"] = top_override   # local copy is renamed to match
             units.append({
                 "design": design,
                 "module": stem,
                 "src": src,
                 "filename": fn,
                 "info": info,
+                "top_override": top_override,
                 "heavy": info["max_mem_depth"] > HEAVY_DEPTH,
             })
     return units
@@ -374,7 +434,7 @@ def setup_unit_dir(u):
     wd = os.path.join(DESIGNS_DIR, u["design"], u["module"])
     os.makedirs(wd, exist_ok=True)
     src_text = open(u["src"], errors="ignore").read()
-    patched, shim_notes = shim_rtl(src_text, u["filename"])
+    patched, shim_notes = shim_rtl(src_text, u["filename"], u.get("top_override"))
     with open(os.path.join(wd, u["filename"]), "w") as fh:
         fh.write(patched)
     u["shim_notes"] = shim_notes

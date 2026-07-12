@@ -1,0 +1,114 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version W-2024.09-SP4 for linux64 - Feb 26, 2025 
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Current time:       Sun Jul 12 13:35:08 2026
+Hostname:           ececomp3.ecn.purdue.edu
+CPU Model:          AMD EPYC 7513 32-Core Processor
+CPU Details:        Cores = 128 : Sockets = 2 : Cache Size = 512 KB : Freq = 2.59 GHz
+OS:                 Linux 4.18.0-553.124.1.el8_10.x86_64
+RAM:                502 GB (Free 257 GB)
+Swap:                63 GB (Free  63 GB)
+Work Filesystem:    /home/min/a mounted to min.ecn.purdue.edu:/export/home/a
+Tmp Filesystem:     /tmp mounted to tmpfs
+Work Disk:          25028 GB (Free 7909 GB)
+Tmp Disk:            19 GB (Free  19 GB)
+
+CPU Load: 4%, Ram Free: 257 GB, Swap Free: 63 GB, Work Disk Free: 7909 GB, Tmp Disk Free: 19 GB
+## ===========================================================================
+## Auto-generated Design Compiler synthesis script
+## Design   : sobel_traditional
+## Source   : frame_buffer.v     (top module: frame_buffer)
+## Clocks   : clk
+## PDK      : ASAP7 7nm  RVT  TT 0.70 V 25 C
+## Tool     : Synopsys DC W-2024.09-SP4
+## Clock    : 1 GHz  (period 1000 ps; ASAP7 Liberty time unit = 1 ps)
+## Compile  : compile_ultra (high effort), fallback compile -map_effort high
+## ===========================================================================
+set DESIGN     "frame_buffer"
+frame_buffer
+set TOP        "frame_buffer"
+frame_buffer
+set ASAP7_DIR  "/home/min/a/das169/das169/asap7"
+/home/min/a/das169/das169/asap7
+set REPORT_DIR "reports"
+reports
+file mkdir $REPORT_DIR
+# --- libraries: 5 ASAP7 RVT cell families ---------------------------------
+set ASAP7_DBS [list \
+    "$ASAP7_DIR/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db" \
+    "$ASAP7_DIR/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db" \
+    "$ASAP7_DIR/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db" \
+    "$ASAP7_DIR/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db" \
+    "$ASAP7_DIR/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db" ]
+/home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db
+set_app_var target_library $ASAP7_DBS
+/home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db
+set_app_var link_library   [concat "*" $ASAP7_DBS]
+* /home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db
+set_app_var search_path    [concat [list "."] $search_path]
+. . /package/eda/synopsys/syn/W-2024.09-SP4/libraries/syn /package/eda/synopsys/syn/W-2024.09-SP4/dw/syn_ver /package/eda/synopsys/syn/W-2024.09-SP4/dw/sim_ver
+# --- read & elaborate RTL --------------------------------------------------
+set RTL_FILES [list "frame_buffer.v"]
+frame_buffer.v
+foreach f $RTL_FILES {
+    puts "Analyzing: $f"
+    if {[catch {analyze -format verilog $f} e]} {
+        puts "verilog analyze failed ($e); retrying as sverilog"
+        if {[catch {analyze -format sverilog $f} e2]} {
+            puts "FATAL: analyze failed on $f : $e2"; exit 2
+        }
+    }
+}
+Analyzing: frame_buffer.v
+Running PRESTO HDLC
+Compiling source file ./frame_buffer.v
+Presto compilation completed successfully.
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db'
+if {[catch {elaborate $TOP} e]} {
+    puts "FATAL: elaborate $TOP failed : $e"; exit 3
+}
+Loading db file '/package/eda/synopsys/syn/W-2024.09-SP4/libraries/syn/gtech.db'
+Loading db file '/package/eda/synopsys/syn/W-2024.09-SP4/libraries/syn/standard.sldb'
+  Loading link library 'asap7sc7p5t_AO_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_OA_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123'
+  Loading link library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+*** SYNTH TIMEOUT after 300s ***

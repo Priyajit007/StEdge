@@ -28,3 +28,7 @@ vivado*.backup.*
 Thumbs.db
 *.swp
 *~
+
+# Python
+__pycache__/
+*.pyc

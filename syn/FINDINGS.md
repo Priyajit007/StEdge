@@ -1,7 +1,14 @@
-# Synthesis Findings — StEdge stochastic edge detection
+# Synthesis Findings — StEdge edge detection (stochastic + traditional)
 
 Per-source-file ASAP7 7 nm synthesis (DC W-2024.09-SP4, 1 GHz, `compile_ultra`
-high effort) of the `sobel_stochastic` and `prewitt_stochastic` RTL.
+high effort) of four designs: the two stochastic edge detectors
+(`sobel_stochastic`, `prewitt_stochastic`) and the two deterministic
+"traditional full system" builds (`sobel_traditional`, `prewitt_traditional`).
+The traditional builds reuse the eight peripheral modules verbatim from the
+stochastic RTL and swap only the compute core for the deterministic engine in
+`traditional_src_codes/` — so §6 below is a like-for-like stochastic-vs-traditional
+comparison of the edge-compute core. Sections 1–5 cover the stochastic designs;
+§6 covers the traditional builds and the comparison.
 
 The StEdge RTL targets a Xilinx FPGA and is integrated in a **Vivado block
 design** (there is no RTL top tying the modules together), so each of the nine
@@ -86,13 +93,14 @@ a property of the memory, not a synthesis error in the surrounding logic.
 
 ---
 
-## 5. Result summary
+## 5. Result summary (stochastic designs)
 
-**16 / 18 source files synthesised cleanly** at 1 GHz on ASAP7 7 nm (no `Error`
-lines). The two `frame_buffer` instances are the expected exception (§4, the
-614 kb BRAM has no ASIC macro). The eight non-core modules are byte-identical
-between the two designs, so their numbers match exactly; only `sobel_stoch`
-differs.
+**16 / 18 stochastic source files synthesised cleanly** at 1 GHz on ASAP7 7 nm
+(no `Error` lines). The two `frame_buffer` instances are the expected exception
+(§4, the 614 kb BRAM has no ASIC macro). The eight non-core modules are
+byte-identical between the two stochastic designs, so their numbers match
+exactly; only `sobel_stoch` differs. The traditional builds and the
+stochastic-vs-traditional comparison are in §6.
 
 Per source file (ASAP7 RVT, TT 0.70 V 25 °C, 1 GHz target; values shared by both
 designs unless split):
@@ -127,5 +135,62 @@ Observations:
   modules), `VER-318` (signed→unsigned RTL conversions), and `UISN-40`
   (DesignWare library auto-add). None affect correctness.
 
-See `results/summary.csv`, `results/synthesis_results.xlsx` (Summary_All +
-per-design sheets) and `plots/` (`within_<design>.png`, `cross_*.png`).
+---
+
+## 6. Traditional full-system synthesis + stochastic-vs-traditional comparison
+
+The two **traditional** designs (`sobel_traditional`, `prewitt_traditional`)
+build the same camera-to-VGA edge-detection system but replace the stochastic
+compute core with the **deterministic** engine in `traditional_src_codes/`
+(`sobel.v` / `prewitt.v`). Those cores compute `|Gx| + |Gy|` with ordinary
+11-bit signed arithmetic (shift-and-add convolution + an `abs()` function,
+mapped by DC to DesignWare `DP_OP_*` adders), instead of the stochastic pipeline's
+XOR subtractors and bit-interleaved concatenation adders. The eight peripheral
+modules are reused **verbatim** from the matching stochastic design (they are
+byte-identical), so the only thing that changes between a stochastic design and
+its traditional counterpart is the compute core — the block the comparison is
+about.
+
+**Shims.** The traditional cores have the *same* illegal multi-clock fetch
+sequencer as `sobel_stoch` (§3), so the identical "drop `or posedge clk`" shim is
+applied. They already declare `shift_en` / `valid_pix`, so the implicit-net shim
+(§2) does not fire. `prewitt.v` declares `module sobel` in the source; its local
+synthesis copy is renamed to `prewitt` so the folder, the DC top and the netlist
+agree. Two extra (benign) warnings appear that the stochastic cores don't:
+`TIM-052` (a non-unate `clk` path through the DesignWare arithmetic operators)
+and `VO-4` (`assign` feedthroughs written into the netlist) — neither affects
+timing closure (both cores meet 1 GHz).
+
+**Result.** All 16 traditional peripheral+core modules synthesised cleanly at
+1 GHz (`frame_buffer` TIMEOUTs as in §4). Across all four designs that is
+**32 / 36 source files clean**. Compute-core comparison (ASAP7 RVT, TT 0.70 V
+25 °C, 1 GHz):
+
+| Compute core        | Area µm² | # cells | # FF | Total power µW | Worst slack ps | Est Fmax GHz |
+|---------------------|---------:|--------:|-----:|---------------:|---------------:|-------------:|
+| Sobel — stochastic  |    99.99 |     932 |  110 |         150.75 |           3.30 |        1.003 |
+| Sobel — traditional |   135.32 |    1206 |  154 |         208.48 |           0.18 |        1.000 |
+| Prewitt — stochastic|   106.40 |     980 |  122 |         165.86 |           0.43 |        1.000 |
+| Prewitt — traditional|  139.72 |    1248 |  154 |         209.20 |           0.55 |        1.001 |
+
+Observations:
+
+* **Stochastic computing wins on area and power, as intended.** For Sobel the
+  stochastic core is **26 % smaller** (100.0 vs 135.3 µm²), draws **28 % less
+  power** (150.8 vs 208.5 µW) and uses **29 % fewer flip-flops** (110 vs 154)
+  than the deterministic arithmetic core. For Prewitt the gap is **24 % area /
+  21 % power / 21 % FFs** (106.4 vs 139.7 µm², 165.9 vs 209.2 µW, 122 vs 154 FF).
+  The XOR/concat stochastic datapath is simply cheaper than the signed
+  shift-add-abs arithmetic that DC maps to DesignWare adders.
+* **Both styles just close 1 GHz.** All four cores meet timing with small
+  positive slack (traditional Sobel is tightest at 0.18 ps); none is timing-
+  limited relative to the other.
+* **Prewitt ≳ Sobel in both styles.** The Prewitt core is marginally larger than
+  Sobel in each style (stochastic +6 %, traditional +3 %) — consistent with the
+  stochastic-only observation in §5.
+
+See `results/summary.csv`, `results/synthesis_results.xlsx` (Summary_All + one
+sheet per design) and `plots/`:
+`within_<design>.png` (per-design breakdowns), `cross_area_by_module.png`,
+`cross_design_avg.png`, `cross_area_vs_power.png`, and
+`cross_compute_core.png` (the stochastic-vs-traditional core comparison above).

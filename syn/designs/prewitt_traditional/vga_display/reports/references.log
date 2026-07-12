@@ -1,0 +1,107 @@
+ 
+****************************************
+Report : reference
+Design : vga_display
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:42:32 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+A2O1A1Ixp33_ASAP7_75t_R
+                   asap7sc7p5t_AO_RVT_TT_nldm_211120
+                                  0.087480       1      0.087480  
+AND2x2_ASAP7_75t_R asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.087480       4      0.349920  
+AO21x1_ASAP7_75t_R asap7sc7p5t_AO_RVT_TT_nldm_211120
+                                  0.087480       2      0.174960  
+AOI21xp33_ASAP7_75t_R
+                   asap7sc7p5t_AO_RVT_TT_nldm_211120
+                                  0.072900       5      0.364500  
+AOI22xp33_ASAP7_75t_R
+                   asap7sc7p5t_AO_RVT_TT_nldm_211120
+                                  0.087480       7      0.612360  
+AOI31xp33_ASAP7_75t_R
+                   asap7sc7p5t_AO_RVT_TT_nldm_211120
+                                  0.087480       1      0.087480  
+AOI211xp5_ASAP7_75t_R
+                   asap7sc7p5t_AO_RVT_TT_nldm_211120
+                                  0.087480       1      0.087480  
+AOI221xp5_ASAP7_75t_R
+                   asap7sc7p5t_AO_RVT_TT_nldm_211120
+                                  0.102060       1      0.102060  
+DFFASRHQNx1_ASAP7_75t_R
+                   asap7sc7p5t_SEQ_RVT_TT_nldm_220123
+                                  0.379080      20      7.581600  n
+DFFHQNx1_ASAP7_75t_R
+                   asap7sc7p5t_SEQ_RVT_TT_nldm_220123
+                                  0.291600       2      0.583200  n
+FAx1_ASAP7_75t_R   asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.204120       9      1.837080  r
+HAxp5_ASAP7_75t_R  asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.131220       1      0.131220  r
+HB1xp67_ASAP7_75t_R
+                   asap7sc7p5t_INVBUF_RVT_TT_nldm_211120
+                                  0.058320       1      0.058320  
+INVx1_ASAP7_75t_R  asap7sc7p5t_INVBUF_RVT_TT_nldm_211120
+                                  0.043740       1      0.043740  
+INVxp33_ASAP7_75t_R
+                   asap7sc7p5t_INVBUF_RVT_TT_nldm_211120
+                                  0.043740      25      1.093500  
+INVxp67_ASAP7_75t_R
+                   asap7sc7p5t_INVBUF_RVT_TT_nldm_211120
+                                  0.043740       7      0.306180  
+NAND2xp33_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.058320      14      0.816480  
+NAND3xp33_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.072900       5      0.364500  
+NAND4xp25_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.087480       4      0.349920  
+NOR2xp33_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.058320       9      0.524880  
+NOR3xp33_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.072900       3      0.218700  
+NOR4xp25_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.087480       7      0.612360  
+O2A1O1Ixp33_ASAP7_75t_R
+                   asap7sc7p5t_OA_RVT_TT_nldm_211120
+                                  0.087480       3      0.262440  
+OA21x2_ASAP7_75t_R asap7sc7p5t_OA_RVT_TT_nldm_211120
+                                  0.102060       3      0.306180  
+OA211x2_ASAP7_75t_R
+                   asap7sc7p5t_OA_RVT_TT_nldm_211120
+                                  0.116640       1      0.116640  
+OAI21xp33_ASAP7_75t_R
+                   asap7sc7p5t_OA_RVT_TT_nldm_211120
+                                  0.072900       2      0.145800  
+OAI32xp33_ASAP7_75t_R
+                   asap7sc7p5t_OA_RVT_TT_nldm_211120
+                                  0.102060       5      0.510300  
+OAI33xp33_ASAP7_75t_R
+                   asap7sc7p5t_OA_RVT_TT_nldm_211120
+                                  0.116640       1      0.116640  
+OR4x1_ASAP7_75t_R  asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.102060       1      0.102060  
+TIEHIx1_ASAP7_75t_R
+                   asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.043740       1      0.043740  
+-----------------------------------------------------------------------------
+Total 30 references                                    17.991720
+1

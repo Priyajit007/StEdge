@@ -1,0 +1,26 @@
+ 
+****************************************
+Report : reference
+Design : data_MUX
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:40:40 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2x2_ASAP7_75t_R asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120
+                                  0.087480       8      0.699840  
+-----------------------------------------------------------------------------
+Total 1 references                                      0.699840
+1

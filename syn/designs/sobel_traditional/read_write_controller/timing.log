@@ -1,0 +1,178 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -input_pins
+        -nets
+        -max_paths 5
+Design : read_write_controller
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:36:58 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: video_on (input port clocked by clk)
+  Endpoint: read_en (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 f
+  video_on (in)                          0.9882   100.9882 f
+  video_on (net)                 1       0.0000   100.9882 f
+  U49/A (AND2x2_ASAP7_75t_R)             0.0000   100.9882 f
+  U49/Y (AND2x2_ASAP7_75t_R)            17.3584   118.3466 f
+  read_en (net)                  1       0.0000   118.3466 f
+  read_en (out)                          0.0000   118.3466 f
+  data arrival time                               118.3466
+
+  clock clk (rise edge)                1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  clock uncertainty                    -50.0000   950.0000
+  output external delay                -100.0000  850.0000
+  data required time                              850.0000
+  -----------------------------------------------------------
+  data required time                              850.0000
+  data arrival time                               -118.3466
+  -----------------------------------------------------------
+  slack (MET)                                     731.6534
+
+
+  Startpoint: video_on (input port clocked by clk)
+  Endpoint: read_en (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 r
+  video_on (in)                          1.1499   101.1499 r
+  video_on (net)                 1       0.0000   101.1499 r
+  U49/A (AND2x2_ASAP7_75t_R)             0.0000   101.1499 r
+  U49/Y (AND2x2_ASAP7_75t_R)            16.4360   117.5860 r
+  read_en (net)                  1       0.0000   117.5860 r
+  read_en (out)                          0.0000   117.5860 r
+  data arrival time                               117.5860
+
+  clock clk (rise edge)                1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  clock uncertainty                    -50.0000   950.0000
+  output external delay                -100.0000  850.0000
+  data required time                              850.0000
+  -----------------------------------------------------------
+  data required time                              850.0000
+  data arrival time                               -117.5860
+  -----------------------------------------------------------
+  slack (MET)                                     732.4140
+
+
+  Startpoint: data_valid (input port clocked by clk)
+  Endpoint: write_en (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 f
+  data_valid (in)                        0.9304   100.9304 f
+  data_valid (net)               1       0.0000   100.9304 f
+  U35/A (INVxp67_ASAP7_75t_R)            0.0000   100.9304 f
+  U35/Y (INVxp67_ASAP7_75t_R)            6.7728   107.7032 r
+  n32 (net)                      1       0.0000   107.7032 r
+  U48/B (NOR2xp33_ASAP7_75t_R)           0.0000   107.7032 r
+  U48/Y (NOR2xp33_ASAP7_75t_R)           6.2103   113.9136 f
+  write_en (net)                 2       0.0000   113.9136 f
+  write_en (out)                         0.0000   113.9136 f
+  data arrival time                               113.9136
+
+  clock clk (rise edge)                1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  clock uncertainty                    -50.0000   950.0000
+  output external delay                -100.0000  850.0000
+  data required time                              850.0000
+  -----------------------------------------------------------
+  data required time                              850.0000
+  data arrival time                               -113.9136
+  -----------------------------------------------------------
+  slack (MET)                                     736.0864
+
+
+  Startpoint: data_valid (input port clocked by clk)
+  Endpoint: wea (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 f
+  data_valid (in)                        0.9304   100.9304 f
+  data_valid (net)               1       0.0000   100.9304 f
+  U35/A (INVxp67_ASAP7_75t_R)            0.0000   100.9304 f
+  U35/Y (INVxp67_ASAP7_75t_R)            6.7728   107.7032 r
+  n32 (net)                      1       0.0000   107.7032 r
+  U48/B (NOR2xp33_ASAP7_75t_R)           0.0000   107.7032 r
+  U48/Y (NOR2xp33_ASAP7_75t_R)           6.2103   113.9136 f
+  write_en (net)                 2       0.0000   113.9136 f
+  wea (out)                              0.0000   113.9136 f
+  data arrival time                               113.9136
+
+  clock clk (rise edge)                1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  clock uncertainty                    -50.0000   950.0000
+  output external delay                -100.0000  850.0000
+  data required time                              850.0000
+  -----------------------------------------------------------
+  data required time                              850.0000
+  data arrival time                               -113.9136
+  -----------------------------------------------------------
+  slack (MET)                                     736.0864
+
+
+  Startpoint: data_valid (input port clocked by clk)
+  Endpoint: wea (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 r
+  data_valid (in)                        1.0544   101.0544 r
+  data_valid (net)               1       0.0000   101.0544 r
+  U35/A (INVxp67_ASAP7_75t_R)            0.0000   101.0544 r
+  U35/Y (INVxp67_ASAP7_75t_R)            6.0138   107.0682 f
+  n32 (net)                      1       0.0000   107.0682 f
+  U48/B (NOR2xp33_ASAP7_75t_R)           0.0000   107.0682 f
+  U48/Y (NOR2xp33_ASAP7_75t_R)           6.1561   113.2244 r
+  write_en (net)                 2       0.0000   113.2244 r
+  wea (out)                              0.0000   113.2244 r
+  data arrival time                               113.2244
+
+  clock clk (rise edge)                1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  clock uncertainty                    -50.0000   950.0000
+  output external delay                -100.0000  850.0000
+  data required time                              850.0000
+  -----------------------------------------------------------
+  data required time                              850.0000
+  data arrival time                               -113.2244
+  -----------------------------------------------------------
+  slack (MET)                                     736.7756
+
+
+1

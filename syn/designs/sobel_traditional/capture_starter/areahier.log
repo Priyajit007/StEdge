@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : capture_starter
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:35:05 2026
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db)
+    asap7sc7p5t_SEQ_RVT_TT_nldm_220123 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db)
+
+Number of ports:                            4
+Number of nets:                             5
+Number of cells:                            3
+Number of combinational cells:              2
+Number of sequential cells:                 1
+Number of macros/black boxes:               0
+Number of buf/inv:                          2
+Number of references:                       2
+
+Combinational area:                  0.087480
+Buf/Inv area:                        0.087480
+Noncombinational area:               0.291600
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                     0.379080
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+capture_starter                      0.3791    100.0    0.0875     0.2916  0.0000  capture_starter
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                   0.0875     0.2916  0.0000
+
+1

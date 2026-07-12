@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : prewitt
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:42:36 2026
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   prewitt                    0.0000       139.7201       -139.7201 (VIOLATED)
+
+
+1

@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : capture_starter
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:35:05 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: capture_reset_reg
+              (rising edge-triggered flip-flop clocked by vsync)
+  Endpoint: capture_reset
+            (output port clocked by vsync)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  capture_reset_reg/CLK (DFFHQNx1_ASAP7_75t_R)          0.0000     0.0000 r
+  capture_reset_reg/QN (DFFHQNx1_ASAP7_75t_R)          54.2638    54.2638 f
+  capture_reset (out)                                   0.0000    54.2638 f
+  data arrival time                                               54.2638
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

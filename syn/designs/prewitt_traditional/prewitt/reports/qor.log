@@ -1,0 +1,96 @@
+ 
+****************************************
+Report : qor
+Design : prewitt
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:42:36 2026
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              43.00
+  Critical Path Length:        952.95
+  Critical Path Slack:           0.55
+  Critical Path Clk Period:   1000.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'clk_100mhz'
+  -----------------------------------
+  Levels of Logic:              43.00
+  Critical Path Length:        939.34
+  Critical Path Slack:           0.49
+  Critical Path Clk Period:   1000.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:               1248
+  Buf/Inv Cell Count:             264
+  Buf Cell Count:                   1
+  Inv Cell Count:                 263
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      1094
+  Sequential Cell Count:          154
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:       94.551299
+  Noncombinational Area:    45.168838
+  Buf/Inv Area:             11.678580
+  Total Buffer Area:             0.06
+  Total Inverter Area:          11.62
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:               139.720138
+  Design Area:             139.720138
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          1383
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: ececomp3.ecn.purdue.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.62
+  Logic Optimization:                  1.36
+  Mapping Optimization:                1.52
+  -----------------------------------------
+  Overall Compile Time:              104.37
+  Overall Compile Wall Clock Time:   109.95
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

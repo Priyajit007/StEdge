@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : vga_display
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:36:59 2026
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   vga_display                0.0000        17.9917       -17.9917  (VIOLATED)
+
+
+1

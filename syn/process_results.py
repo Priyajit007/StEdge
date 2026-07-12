@@ -7,9 +7,12 @@ Layout produced by synth.py:
     designs/<design>/<module>/{area,areahier,power,powerhier,timing}.log
                               test.log, dc_<module>.tcl, <module>.mapped.v
 
-Here a "design" is sobel_stochastic / prewitt_stochastic (used as the *category*)
-and each row is one RTL source file ("module"). There are no SRAM hard macros in
-this RTL, so (unlike the RWT/MATMUL reference flow) there is no macro-area split.
+Here a "design" is one of sobel_stochastic / prewitt_stochastic /
+sobel_traditional / prewitt_traditional (used as the *category*) and each row is
+one RTL source file ("module"). The eight peripheral modules are byte-identical
+across all four designs; only the compute core differs (stochastic sobel_stoch
+vs deterministic sobel / prewitt). There are no SRAM hard macros in this RTL, so
+(unlike the RWT/MATMUL reference flow) there is no macro-area split.
 
 Metrics parsed per source file:
     area.log    -> combinational / noncombinational / buf-inv / total area (um^2)
@@ -25,6 +28,7 @@ Outputs:
     results/summary.csv
     plots/within_<design>.png        per-module area/power/slack within a design
     plots/cross_*.png                between-design comparisons
+    plots/cross_compute_core.png     stochastic-vs-traditional compute-core bars
 """
 import csv
 import os
@@ -46,14 +50,32 @@ PLOTS_DIR = os.path.join(HERE, "plots")
 
 CLK_PERIOD_PS = 1000.0          # 1 GHz target
 
-CATEGORY_ORDER = ["sobel_stochastic", "prewitt_stochastic"]
+# Designs are grouped by operator so the stochastic/traditional pair for each
+# edge detector sits adjacent in tables, sheets and the average plots.
+CATEGORY_ORDER = ["sobel_stochastic", "sobel_traditional",
+                  "prewitt_stochastic", "prewitt_traditional"]
 
-# functional order for the x-axis of the within-design plots
+# functional order for the x-axis of the within-design plots (compute cores last)
 MODULE_ORDER = ["address_mux", "data_MUX", "camera_reset_clk", "capture_starter",
                 "capture", "frame_buffer", "read_write_controller",
-                "vga_display", "sobel_stoch"]
+                "vga_display", "sobel_stoch", "sobel", "prewitt"]
 
-CAT_COLORS = {"sobel_stochastic": "#4C72B0", "prewitt_stochastic": "#DD8452"}
+# paired colours: dark = stochastic, light = traditional, per operator
+CAT_COLORS = {"sobel_stochastic": "#4C72B0", "sobel_traditional": "#A6C8E8",
+              "prewitt_stochastic": "#DD8452", "prewitt_traditional": "#F3C6A5"}
+
+# the one module that differs between designs (the 8 peripherals are identical);
+# used for the direct stochastic-vs-traditional compute-core comparison plot.
+COMPUTE_CORE = {"sobel_stochastic": "sobel_stoch",
+                "prewitt_stochastic": "sobel_stoch",
+                "sobel_traditional": "sobel",
+                "prewitt_traditional": "prewitt"}
+CORE_ORDER = ["sobel_stochastic", "sobel_traditional",
+              "prewitt_stochastic", "prewitt_traditional"]
+CORE_LABEL = {"sobel_stochastic": "Sobel\n(stochastic)",
+              "sobel_traditional": "Sobel\n(traditional)",
+              "prewitt_stochastic": "Prewitt\n(stochastic)",
+              "prewitt_traditional": "Prewitt\n(traditional)"}
 
 
 # ── unit helpers ──────────────────────────────────────────────────────────
@@ -316,24 +338,27 @@ def plot_cross_design(rows):
     rs = _ok(rows)
     if not rs:
         return
-    # 1) all modules, area grouped by design (paired bars per module)
+    # 1) all modules, area grouped by design (grouped bars per module)
+    cats = [c for c in CATEGORY_ORDER if any(r["category"] == c for r in rs)]
+    n = max(len(cats), 1)
     modules = [m for m in MODULE_ORDER
                if any(r["module"] == m for r in rs)]
     x = np.arange(len(modules))
-    w = 0.38
-    fig, ax = plt.subplots(figsize=(min(6 + 1.0 * len(modules), 20), 5.5))
-    for i, cat in enumerate(CATEGORY_ORDER):
+    w = 0.8 / n
+    fig, ax = plt.subplots(figsize=(min(7 + 1.1 * len(modules), 22), 5.5))
+    for i, cat in enumerate(cats):
         vals = []
         for m in modules:
             cell = [r for r in rs if r["module"] == m and r["category"] == cat]
             vals.append(cell[0].get("total_cell_area", 0) if cell else 0)
-        ax.bar(x + (i - 0.5) * w, vals, w, label=cat,
+        ax.bar(x + (i - (n - 1) / 2) * w, vals, w, label=cat,
                color=CAT_COLORS.get(cat, "#888"))
     ax.set_xticks(x)
     ax.set_xticklabels(modules, rotation=35, ha="right", fontsize=8)
     ax.set_ylabel("Total cell area (um2)")
-    ax.set_title("Per-source-file area — sobel vs prewitt")
-    ax.legend(fontsize=9)
+    ax.set_title("Per-source-file area by design "
+                 "(peripherals identical; compute core differs)")
+    ax.legend(fontsize=8)
     ax.grid(axis="y", alpha=0.3)
     fig.tight_layout()
     fig.savefig(os.path.join(PLOTS_DIR, "cross_area_by_module.png"), dpi=140)
@@ -380,6 +405,47 @@ def plot_cross_design(rows):
     plt.close(fig)
 
 
+def plot_compute_core(rows):
+    """Direct stochastic-vs-traditional comparison of the compute cores -- the
+    only module that differs between the four designs (the eight peripherals are
+    byte-identical). Bars: total cell area, total power, sequential-cell (FF)
+    count and worst slack, grouped Sobel then Prewitt."""
+    pick = {}
+    for r in rows:
+        core = COMPUTE_CORE.get(r["category"])
+        if core and r["module"] == core and r["status"] == "OK":
+            pick[r["category"]] = r
+    cats = [c for c in CORE_ORDER if c in pick]
+    if not cats:
+        return
+    labels = [CORE_LABEL[c] for c in cats]
+    colors = [CAT_COLORS.get(c, "#888") for c in cats]
+    x = np.arange(len(cats))
+    metrics = [("total_cell_area", "Total cell area (um2)"),
+               ("total_power_uW", "Total power (uW)"),
+               ("num_seq_cells", "# sequential cells (FF)"),
+               ("worst_slack_ps", "Worst slack (ps) @1GHz")]
+    fig, axes = plt.subplots(1, 4, figsize=(17, 5))
+    for ax, (key, title) in zip(axes, metrics):
+        vals = [pick[c].get(key, 0) or 0 for c in cats]
+        bars = ax.bar(x, vals, color=colors, edgecolor="black", linewidth=0.4)
+        ax.set_xticks(x)
+        ax.set_xticklabels(labels, fontsize=8)
+        ax.set_title(title)
+        ax.grid(axis="y", alpha=0.3)
+        if key == "worst_slack_ps":
+            ax.axhline(0, color="black", lw=1, ls=":")
+        for b, v in zip(bars, vals):
+            ax.annotate(f"{v:.1f}" if abs(v) >= 1 else f"{v:.2f}",
+                        (b.get_x() + b.get_width() / 2, v),
+                        ha="center", va="bottom", fontsize=7)
+    fig.suptitle("Compute-core comparison — stochastic vs traditional",
+                 fontweight="bold")
+    fig.tight_layout(rect=[0, 0, 1, 0.95])
+    fig.savefig(os.path.join(PLOTS_DIR, "cross_compute_core.png"), dpi=140)
+    plt.close(fig)
+
+
 def main():
     os.makedirs(PLOTS_DIR, exist_ok=True)
     rows = collect()
@@ -388,6 +454,7 @@ def main():
     write_excel(rows)
     plot_within_design(rows)
     plot_cross_design(rows)
+    plot_compute_core(rows)
     print(f"  plots -> {PLOTS_DIR}/")
     allwarn = defaultdict(int)
     for r in rows:

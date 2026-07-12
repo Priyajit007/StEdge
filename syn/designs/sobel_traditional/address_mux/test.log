@@ -1,0 +1,472 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version W-2024.09-SP4 for linux64 - Feb 26, 2025 
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Current time:       Sun Jul 12 13:33:07 2026
+Hostname:           ececomp3.ecn.purdue.edu
+CPU Model:          AMD EPYC 7513 32-Core Processor
+CPU Details:        Cores = 128 : Sockets = 2 : Cache Size = 512 KB : Freq = 2.59 GHz
+OS:                 Linux 4.18.0-553.124.1.el8_10.x86_64
+RAM:                502 GB (Free 257 GB)
+Swap:                63 GB (Free  63 GB)
+Work Filesystem:    /home/min/a mounted to min.ecn.purdue.edu:/export/home/a
+Tmp Filesystem:     /tmp mounted to tmpfs
+Work Disk:          25028 GB (Free 7909 GB)
+Tmp Disk:            19 GB (Free  19 GB)
+
+CPU Load: 1%, Ram Free: 257 GB, Swap Free: 63 GB, Work Disk Free: 7909 GB, Tmp Disk Free: 19 GB
+## ===========================================================================
+## Auto-generated Design Compiler synthesis script
+## Design   : sobel_traditional
+## Source   : address_mux.v     (top module: address_mux)
+## Clocks   : none (combinational -> virtual clock)
+## PDK      : ASAP7 7nm  RVT  TT 0.70 V 25 C
+## Tool     : Synopsys DC W-2024.09-SP4
+## Clock    : 1 GHz  (period 1000 ps; ASAP7 Liberty time unit = 1 ps)
+## Compile  : compile_ultra (high effort), fallback compile -map_effort high
+## ===========================================================================
+set DESIGN     "address_mux"
+address_mux
+set TOP        "address_mux"
+address_mux
+set ASAP7_DIR  "/home/min/a/das169/das169/asap7"
+/home/min/a/das169/das169/asap7
+set REPORT_DIR "reports"
+reports
+file mkdir $REPORT_DIR
+# --- libraries: 5 ASAP7 RVT cell families ---------------------------------
+set ASAP7_DBS [list \
+    "$ASAP7_DIR/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db" \
+    "$ASAP7_DIR/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db" \
+    "$ASAP7_DIR/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db" \
+    "$ASAP7_DIR/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db" \
+    "$ASAP7_DIR/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db" ]
+/home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db
+set_app_var target_library $ASAP7_DBS
+/home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db
+set_app_var link_library   [concat "*" $ASAP7_DBS]
+* /home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db
+set_app_var search_path    [concat [list "."] $search_path]
+. . /package/eda/synopsys/syn/W-2024.09-SP4/libraries/syn /package/eda/synopsys/syn/W-2024.09-SP4/dw/syn_ver /package/eda/synopsys/syn/W-2024.09-SP4/dw/sim_ver
+# --- read & elaborate RTL --------------------------------------------------
+set RTL_FILES [list "address_mux.v"]
+address_mux.v
+foreach f $RTL_FILES {
+    puts "Analyzing: $f"
+    if {[catch {analyze -format verilog $f} e]} {
+        puts "verilog analyze failed ($e); retrying as sverilog"
+        if {[catch {analyze -format sverilog $f} e2]} {
+            puts "FATAL: analyze failed on $f : $e2"; exit 2
+        }
+    }
+}
+Analyzing: address_mux.v
+Running PRESTO HDLC
+Compiling source file ./address_mux.v
+Presto compilation completed successfully.
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db'
+if {[catch {elaborate $TOP} e]} {
+    puts "FATAL: elaborate $TOP failed : $e"; exit 3
+}
+Loading db file '/package/eda/synopsys/syn/W-2024.09-SP4/libraries/syn/gtech.db'
+Loading db file '/package/eda/synopsys/syn/W-2024.09-SP4/libraries/syn/standard.sldb'
+  Loading link library 'asap7sc7p5t_AO_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_OA_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123'
+  Loading link library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (address_mux)
+Module: address_mux, Ports: 52, Input: 35, Output: 17, Inout: 0
+Module: address_mux, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module address_mux report end. (ELAB-965)
+Elaborated 1 design.
+Current design is now 'address_mux'.
+current_design $TOP
+Current design is 'address_mux'.
+{address_mux}
+link
+
+  Linking design 'address_mux'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  address_mux                 /home/min/a/das169/design_compiler/StEdge/syn/designs/sobel_traditional/address_mux/address_mux.db
+  asap7sc7p5t_AO_RVT_TT_nldm_211120 (library) /home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db
+  asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 (library) /home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db
+  asap7sc7p5t_OA_RVT_TT_nldm_211120 (library) /home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db
+  asap7sc7p5t_SEQ_RVT_TT_nldm_220123 (library) /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db
+  asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 (library) /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db
+
+1
+uniquify
+1
+# --- ASAP7 don't-use list --------------------------------------------------
+source "$ASAP7_DIR/asap7_dontuse.tcl"
+ASAP7 dont-use list applied.
+# --- timing constraints: 1 GHz --------------------------------------------
+set CLK_PERIOD_PS 1000
+1000
+create_clock -name vclk -period $CLK_PERIOD_PS
+Warning: Creating virtual clock named 'vclk' with no sources. (UID-348)
+1
+set NONCLK_INPUTS [all_inputs]
+{rd_add[16] rd_add[15] rd_add[14] rd_add[13] rd_add[12] rd_add[11] rd_add[10] rd_add[9] rd_add[8] rd_add[7] rd_add[6] rd_add[5] rd_add[4] rd_add[3] rd_add[2] rd_add[1] rd_add[0] wr_add[16] wr_add[15] wr_add[14] wr_add[13] wr_add[12] wr_add[11] wr_add[10] wr_add[9] wr_add[8] wr_add[7] wr_add[6] wr_add[5] wr_add[4] wr_add[3] wr_add[2] wr_add[1] wr_add[0] wea}
+set DELAY_OUTPUTS [all_outputs]
+{add[16] add[15] add[14] add[13] add[12] add[11] add[10] add[9] add[8] add[7] add[6] add[5] add[4] add[3] add[2] add[1] add[0]}
+set_input_delay  -max 100 -clock [get_clocks vclk] $NONCLK_INPUTS
+1
+set_output_delay -max 100 -clock [get_clocks vclk] $DELAY_OUTPUTS
+1
+set DRV_BUF "BUFx2_ASAP7_75t_R"
+BUFx2_ASAP7_75t_R
+if {[sizeof_collection [get_lib_cells -quiet */$DRV_BUF]] > 0} {
+    set_driving_cell -lib_cell $DRV_BUF $NONCLK_INPUTS
+}
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[16]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[15]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[14]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[13]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[12]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'rd_add[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[16]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[15]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[14]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[13]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[12]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[11]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[10]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[9]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[8]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[7]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[6]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[5]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[4]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[3]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[2]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[1]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wr_add[0]'. (UID-401)
+Warning: Design rule attributes from the driving cell will be set on the port 'wea'. (UID-401)
+1
+check_design > $REPORT_DIR/check_design.log
+# --- compile (high effort) -------------------------------------------------
+set_max_area 0
+1
+set_app_var compile_ultra_ungroup_small_hierarchies false
+false
+puts "=== compile_ultra (high effort) ==="
+=== compile_ultra (high effort) ===
+if {[catch {compile_ultra -no_autoungroup} e]} {
+    puts "compile_ultra failed: $e"
+    puts "=== falling back to compile -map_effort high ==="
+    if {[catch {compile -map_effort high} e2]} {
+        puts "FATAL: compile failed : $e2"; exit 4
+    }
+}
+Loading db file '/package/eda/synopsys/syn/W-2024.09-SP4/libraries/syn/dw_foundation.sldb'
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing leakage power optimization. (PWR-850)
+CPU Load: 1%, Ram Free: 257 GB, Swap Free: 63 GB, Work Disk Free: 7909 GB, Tmp Disk Free: 19 GB
+Analyzing: "/home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db"
+Analyzing: "/home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db"
+Analyzing: "/home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db"
+Analyzing: "/home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db"
+Analyzing: "/home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db"
+Library analysis succeeded.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | W-2024.09-DWBB_202409.4 |     *     |
+| Licensed DW Building Blocks        | W-2024.09-DWBB_202409.4 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Command Line | compile_ultra -no_autoungroup                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 4                                      |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 0                                      |
+| Macro Count                                             | 0                                      |
+| Pad Count                                               | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 2                                      |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with Target Library Subset (with clock_path)     | false  (false )                        |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+  Simplifying Design 'address_mux'
+
+  Loading target library 'asap7sc7p5t_AO_RVT_TT_nldm_211120'
+  Loading target library 'asap7sc7p5t_OA_RVT_TT_nldm_211120'
+  Loading target library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123'
+  Loading target library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120'
+LNC WARNING: Found output_to_output lib arc on HAxp5_ASAP7_75t_R.
+Loaded alib file './alib-52/asap7sc7p5t_AO_RVT_TT_nldm_211120.db.alib' (placeholder)
+Loaded alib file './alib-52/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db.alib' (placeholder)
+Loaded alib file './alib-52/asap7sc7p5t_OA_RVT_TT_nldm_211120.db.alib' (placeholder)
+Loaded alib file './alib-52/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db.alib' (placeholder)
+Loaded alib file './alib-52/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db.alib' (placeholder)
+Warning: Only placeholder alibs were found. Proceeding with library analysis. (OPT-1311)
+CPU Load: 2%, Ram Free: 256 GB, Swap Free: 63 GB, Work Disk Free: 7909 GB, Tmp Disk Free: 19 GB
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'address_mux'
+CPU Load: 2%, Ram Free: 256 GB, Swap Free: 63 GB, Work Disk Free: 7909 GB, Tmp Disk Free: 19 GB
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'TIELOx1_ASAP7_75t_R' in the library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHIx1_ASAP7_75t_R' in the library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Warning: Only placeholder alibs were found. Proceeding with library analysis. (OPT-1311)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:52       2.8      0.00       0.0       0.0                           3552.7168
+    0:01:52       2.8      0.00       0.0       0.0                           3552.7168
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:53       2.4      0.00       0.0       0.0                           2017.9524
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+    0:01:53       2.3      0.00       0.0       0.0                           1966.7986
+CPU Load: 4%, Ram Free: 256 GB, Swap Free: 63 GB, Work Disk Free: 7909 GB, Tmp Disk Free: 19 GB
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_AO_RVT_TT_nldm_211120.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_OA_RVT_TT_nldm_211120.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db'
+Loading db file '/home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+  Loading target library 'asap7sc7p5t_AO_RVT_TT_nldm_211120'
+  Loading target library 'asap7sc7p5t_OA_RVT_TT_nldm_211120'
+  Loading target library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123'
+  Loading target library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120'
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+CPU Load: 4%, Ram Free: 256 GB, Swap Free: 63 GB, Work Disk Free: 7909 GB, Tmp Disk Free: 19 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+# --- reports (kept) --------------------------------------------------------
+puts "=== generating reports ==="
+=== generating reports ===
+report_timing -path_type full -delay_type max -max_paths 5 -nworst 5 \
+    -input_pins -nets -significant_digits 4 > timing.log
+report_area                 > area.log
+report_area  -hierarchy     > areahier.log
+report_power                > power.log
+report_power -hierarchy     > powerhier.log
+# --- small diagnostics -----------------------------------------------------
+report_timing -delay_type min -significant_digits 4 > $REPORT_DIR/timing_hold.log
+report_qor                       > $REPORT_DIR/qor.log
+report_constraint -all_violators -significant_digits 4 > $REPORT_DIR/drc.log
+report_reference                 > $REPORT_DIR/references.log
+if {[catch {report_clock_gating > $REPORT_DIR/clock_gating.log} e]} {}
+write -format verilog -hierarchy -output ${DESIGN}.mapped.v
+Writing verilog file '/home/min/a/das169/design_compiler/StEdge/syn/designs/sobel_traditional/address_mux/address_mux.mapped.v'.
+1
+puts "=== SYNTH_OK $DESIGN ==="
+=== SYNTH_OK address_mux ===
+exit 0
+
+Memory usage for this session 313 Mbytes.
+Memory usage for this session including child processes 313 Mbytes.
+CPU usage for this session 102 seconds ( 0.03 hours ).
+Elapsed time for this session 121 seconds ( 0.03 hours ).
+
+Thank you...

@@ -1,0 +1,19 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : camera_reset_clk
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:38:48 2026
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   camera_reset_clk           0.0000         0.0437        -0.0437  (VIOLATED)
+
+
+1

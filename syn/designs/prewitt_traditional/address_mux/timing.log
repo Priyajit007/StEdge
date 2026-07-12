@@ -1,0 +1,194 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -input_pins
+        -nets
+        -max_paths 5
+Design : address_mux
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:38:49 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: wea (input port clocked by vclk)
+  Endpoint: add[4] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 r
+  wea (in)                              14.6130   114.6130 r
+  wea (net)                     18       0.0000   114.6130 r
+  U19/A (HB1xp67_ASAP7_75t_R)            0.0000   114.6130 r
+  U19/Y (HB1xp67_ASAP7_75t_R)           25.4922   140.1052 r
+  n2 (net)                       1       0.0000   140.1052 r
+  U20/A (INVx1_ASAP7_75t_R)              0.0000   140.1052 r
+  U20/Y (INVx1_ASAP7_75t_R)             28.2630   168.3682 f
+  n3 (net)                      17       0.0000   168.3682 f
+  U25/B1 (AO22x1_ASAP7_75t_R)            0.0000   168.3682 f
+  U25/Y (AO22x1_ASAP7_75t_R)            33.7533   202.1216 f
+  add[4] (net)                   1       0.0000   202.1216 f
+  add[4] (out)                           0.0000   202.1216 f
+  data arrival time                               202.1216
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -202.1216
+  -----------------------------------------------------------
+  slack (MET)                                     697.8784
+
+
+  Startpoint: wea (input port clocked by vclk)
+  Endpoint: add[3] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 r
+  wea (in)                              14.6130   114.6130 r
+  wea (net)                     18       0.0000   114.6130 r
+  U19/A (HB1xp67_ASAP7_75t_R)            0.0000   114.6130 r
+  U19/Y (HB1xp67_ASAP7_75t_R)           25.4922   140.1052 r
+  n2 (net)                       1       0.0000   140.1052 r
+  U20/A (INVx1_ASAP7_75t_R)              0.0000   140.1052 r
+  U20/Y (INVx1_ASAP7_75t_R)             28.2630   168.3682 f
+  n3 (net)                      17       0.0000   168.3682 f
+  U24/B1 (AO22x1_ASAP7_75t_R)            0.0000   168.3682 f
+  U24/Y (AO22x1_ASAP7_75t_R)            33.7533   202.1216 f
+  add[3] (net)                   1       0.0000   202.1216 f
+  add[3] (out)                           0.0000   202.1216 f
+  data arrival time                               202.1216
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -202.1216
+  -----------------------------------------------------------
+  slack (MET)                                     697.8784
+
+
+  Startpoint: wea (input port clocked by vclk)
+  Endpoint: add[2] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 r
+  wea (in)                              14.6130   114.6130 r
+  wea (net)                     18       0.0000   114.6130 r
+  U19/A (HB1xp67_ASAP7_75t_R)            0.0000   114.6130 r
+  U19/Y (HB1xp67_ASAP7_75t_R)           25.4922   140.1052 r
+  n2 (net)                       1       0.0000   140.1052 r
+  U20/A (INVx1_ASAP7_75t_R)              0.0000   140.1052 r
+  U20/Y (INVx1_ASAP7_75t_R)             28.2630   168.3682 f
+  n3 (net)                      17       0.0000   168.3682 f
+  U23/B1 (AO22x1_ASAP7_75t_R)            0.0000   168.3682 f
+  U23/Y (AO22x1_ASAP7_75t_R)            33.7533   202.1216 f
+  add[2] (net)                   1       0.0000   202.1216 f
+  add[2] (out)                           0.0000   202.1216 f
+  data arrival time                               202.1216
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -202.1216
+  -----------------------------------------------------------
+  slack (MET)                                     697.8784
+
+
+  Startpoint: wea (input port clocked by vclk)
+  Endpoint: add[1] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 r
+  wea (in)                              14.6130   114.6130 r
+  wea (net)                     18       0.0000   114.6130 r
+  U19/A (HB1xp67_ASAP7_75t_R)            0.0000   114.6130 r
+  U19/Y (HB1xp67_ASAP7_75t_R)           25.4922   140.1052 r
+  n2 (net)                       1       0.0000   140.1052 r
+  U20/A (INVx1_ASAP7_75t_R)              0.0000   140.1052 r
+  U20/Y (INVx1_ASAP7_75t_R)             28.2630   168.3682 f
+  n3 (net)                      17       0.0000   168.3682 f
+  U22/B1 (AO22x1_ASAP7_75t_R)            0.0000   168.3682 f
+  U22/Y (AO22x1_ASAP7_75t_R)            33.7533   202.1216 f
+  add[1] (net)                   1       0.0000   202.1216 f
+  add[1] (out)                           0.0000   202.1216 f
+  data arrival time                               202.1216
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -202.1216
+  -----------------------------------------------------------
+  slack (MET)                                     697.8784
+
+
+  Startpoint: wea (input port clocked by vclk)
+  Endpoint: add[0] (output port clocked by vclk)
+  Path Group: vclk
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock vclk (rise edge)                 0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  input external delay                 100.0000   100.0000 r
+  wea (in)                              14.6130   114.6130 r
+  wea (net)                     18       0.0000   114.6130 r
+  U19/A (HB1xp67_ASAP7_75t_R)            0.0000   114.6130 r
+  U19/Y (HB1xp67_ASAP7_75t_R)           25.4922   140.1052 r
+  n2 (net)                       1       0.0000   140.1052 r
+  U20/A (INVx1_ASAP7_75t_R)              0.0000   140.1052 r
+  U20/Y (INVx1_ASAP7_75t_R)             28.2630   168.3682 f
+  n3 (net)                      17       0.0000   168.3682 f
+  U21/B1 (AO22x1_ASAP7_75t_R)            0.0000   168.3682 f
+  U21/Y (AO22x1_ASAP7_75t_R)            33.7533   202.1216 f
+  add[0] (net)                   1       0.0000   202.1216 f
+  add[0] (out)                           0.0000   202.1216 f
+  data arrival time                               202.1216
+
+  clock vclk (rise edge)               1000.0000  1000.0000
+  clock network delay (ideal)            0.0000   1000.0000
+  output external delay                -100.0000  900.0000
+  data required time                              900.0000
+  -----------------------------------------------------------
+  data required time                              900.0000
+  data arrival time                               -202.1216
+  -----------------------------------------------------------
+  slack (MET)                                     697.8784
+
+
+1

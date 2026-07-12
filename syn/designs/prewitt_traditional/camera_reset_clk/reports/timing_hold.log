@@ -1,0 +1,29 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : camera_reset_clk
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:38:48 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: top
+
+  Startpoint: clk (input port)
+  Endpoint: xclk (output port clocked by vclk)
+  Path Group: (none)
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clk (in)                               0.0000     0.0000 r
+  xclk (out)                             0.0000     0.0000 r
+  data arrival time                                 0.0000
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : data_MUX
+Version: W-2024.09-SP4
+Date   : Sun Jul 12 13:40:40 2026
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 (File: /home/min/a/das169/das169/asap7/db/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db)
+
+Number of ports:                           17
+Number of nets:                            17
+Number of cells:                            8
+Number of combinational cells:              8
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       1
+
+Combinational area:                  0.699840
+Buf/Inv area:                        0.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                     0.699840
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+data_MUX                             0.6998    100.0    0.6998     0.0000  0.0000  data_MUX
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                   0.6998     0.0000  0.0000
+
+1

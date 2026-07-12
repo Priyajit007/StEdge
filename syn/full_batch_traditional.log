@@ -1,0 +1,22 @@
+Synthesizing 18 source files  (jobs=4)
+    sobel_traditional/camera_reset_clk         OK rc=0
+    sobel_traditional/address_mux              OK rc=0
+    sobel_traditional/capture                  OK rc=0
+    sobel_traditional/capture_starter          OK rc=0
+    sobel_traditional/data_MUX                 OK rc=0
+    sobel_traditional/read_write_controller    OK rc=0
+    sobel_traditional/vga_display              OK rc=0
+    prewitt_traditional/camera_reset_clk         OK rc=0
+    prewitt_traditional/address_mux              OK rc=0
+    sobel_traditional/sobel                    OK rc=0
+    sobel_traditional/frame_buffer             FAIL rc=-1
+    prewitt_traditional/capture_starter          OK rc=0
+    prewitt_traditional/data_MUX                 OK rc=0
+    prewitt_traditional/capture                  OK rc=0
+    prewitt_traditional/read_write_controller    OK rc=0
+    prewitt_traditional/vga_display              OK rc=0
+    prewitt_traditional/prewitt                  OK rc=0
+    prewitt_traditional/frame_buffer             FAIL rc=-1
+
+=== 16/18 succeeded ===
+FAILED: sobel_traditional/frame_buffer, prewitt_traditional/frame_buffer
